@@ -7,7 +7,7 @@ The code for CS427 Android app.
 <br/>
 | Name          | NetID         | GitHub ID   | Role          | Experience    |
 | ------------- | ------------- | ------------| ------------- | ------------- |
-|               |               |             |               |               |            
+| Anirudh Prasad              | ap73              | aniprasad            |  TBD             | C++, C#              |            
 |               |               |             |               |               |
 |               |               |             |               |               |
 |               |               |             |               |               |
