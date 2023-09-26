@@ -9,7 +9,7 @@ The code for CS427 Android app.
 | ------------- | ------------- | ------------| ------------- | ------------- |
 | Anirudh Prasad              | ap73              | aniprasad            |  TBD             | C++, C#              |            
 | Sherry Li     |  xuehail2             |  sherrylinice           | TBD              | Python, Java              |
-|               |               |             |               |               |
+| Yafeng Liu              | yafengl2      | ya7eng | TBD             | Python |
 |               |               |             |               |               |
 |               |               |             |               |               |
 |               |               |             |               |               |
