@@ -12,6 +12,7 @@ The code for CS427 Android app.
 | Yafeng Liu              | yafengl2      | ya7eng | TBD             | Python |
 | Amjad Aleid              | aaleid2              | jadd120            | TBD              | javascript, java, scala, SQL              |
 | Quan Nguyen                 | quanhn2              | quannhoang            | Developer              |  Python, Javascript             |
+| Shuorong Zhu                | sz77              | shz6286            | Developer              |  Python, Java , SQL            |
 |               |               |             |               |               |
 |               |               |             |               |               |
 |               |               |             |               |               |
