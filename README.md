@@ -13,7 +13,7 @@ The code for CS427 Android app.
 | Amjad Aleid              | aaleid2              | jadd120            | TBD              | javascript, java, scala, SQL              |
 | Quan Nguyen                 | quanhn2              | quannhoang            | Developer              |  Python, Javascript             |
 | Shuorong Zhu                | sz77              | shz6286            | Developer              |  Python, Java , SQL            |
-|               |               |             |               |               |
+| Sinja Sanandan              | sinjass2             | sinjass2           | TBD              | Python, Java, C++, SQL              |
 |               |               |             |               |               |
 <br/>
 
