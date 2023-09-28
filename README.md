@@ -14,7 +14,7 @@ The code for CS427 Android app.
 | Quan Nguyen                 | quanhn2              | quannhoang            | Developer              |  Python, Javascript             |
 | Shuorong Zhu                | sz77              | shz6286            | Developer              |  Python, Java , SQL            |
 | Sinja Sanandan              | sinjass2             | sinjasanandan           | TBD              | Python, Java, C++, SQL              |
-|               |               |             |               |               |
+| Aviral Singh Halsi              | ahalsi2            | avireusdev11            |   Technical Lead            | Flutter, Java, Python, NodeJs              |
 <br/>
 
 
