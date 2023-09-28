@@ -8,7 +8,7 @@ The code for CS427 Android app.
 | Name          | NetID         | GitHub ID   | Role          | Experience    |
 | ------------- | ------------- | ------------| ------------- | ------------- |
 | Anirudh Prasad              | ap73              | aniprasad            |  TBD             | C++, C#              |            
-| Sherry Li     |  xuehail2             |  sherrylinice           | TBD              | Python, Java, SQL              |
+| Sherry Li     |  xuehail2             |  sherrylinice           | Developer              | Python, Java, SQL              |
 | Yafeng Liu              | yafengl2      | ya7eng | TBD             | Python |
 | Amjad Aleid              | aaleid2              | jadd120            | TBD              | javascript, java, scala, SQL              |
 | Quan Nguyen                 | quanhn2              | quannhoang            | Developer              |  Python, Javascript             |
