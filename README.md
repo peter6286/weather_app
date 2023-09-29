@@ -9,12 +9,13 @@ The code for CS427 Android app.
 | ------------- | ------------- | ------------| ------------- | ------------- |
 | Anirudh Prasad              | ap73              | aniprasad            |  Developer             | C++, C#              |            
 | Sherry Li     |  xuehail2             |  sherrylinice           | Developer              | Python, Java, SQL              |
-| Yafeng Liu              | yafengl2      | ya7eng | TBD             | Python |
+| Yafeng Liu              | yafengl2      | ya7eng | Manager             | Python |
 | Amjad Aleid              | aaleid2              | jadd120            | Developer              | javascript, java, scala, SQL              |
 | Quan Nguyen                 | quanhn2              | quannhoang            | Developer              |  Python, Javascript             |
 | Shuorong Zhu                | sz77              | shz6286            | Developer              |  Python, Java , SQL            |
-| Sinja Sanandan              | sinjass2             | sinjasanandan           | TBD              | Python, Java, C++, SQL              |
+| Sinja Sanandan              | sinjass2             | sinjasanandan           | Developer             | Python, Java, C++, SQL              |
 | Aviral Singh Halsi              | ahalsi2            | avireusdev11            |   Tech Leader            | Flutter, Java, Python, NodeJs              |
+
 <br/>
 
 

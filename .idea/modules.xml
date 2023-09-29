@@ -5,8 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/CS427App.iml" filepath="$PROJECT_DIR$/.idea/modules/CS427App.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CS427App.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CS427App.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CS427App.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CS427App.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CS427App.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CS427App.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CS427App.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CS427App.app.unitTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CS_427_project.CS427App.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CS_427_project.CS427App.app.iml" />
     </modules>
   </component>
 </project>
