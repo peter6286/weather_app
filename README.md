@@ -39,9 +39,6 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 |NetID|Progressfromlastweek|Tasksfornextweek|
 |---------------|--------------------------------|----------------------|
-</br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
 | ap73               | Successfully set up the project environment, and the app is now running on the emulator with correct team number.                                 |                       |
 | xuehail2               | Successfully set up the project environment, and the app is now running on the emulator with correct team number.                                |                       |
 | yafengl2               | Successfully set up the project environment, and the app is now running on the emulator with correct team number.                                |                       |
