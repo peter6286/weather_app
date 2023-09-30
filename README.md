@@ -37,17 +37,21 @@ Members present: List the NetID of the people who attended the meeting
 </br>
 Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
+|NetID|Progressfromlastweek|Tasksfornextweek|
+|---------------|--------------------------------|----------------------|
+</br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| ap73               | Successfully set up the project environment, and the app is now running on the emulator with correct team number.                                 |                       |
+| xuehail2               | Successfully set up the project environment, and the app is now running on the emulator with correct team number.                                |                       |
+| yafengl2               | Successfully set up the project environment, and the app is now running on the emulator with correct team number.                                |                       |
+| aaleid2               | Successfully set up the project environment, and the app is now running on the emulator with correct team number.                                |                       |
+| quanhn2               | Successfully set up the project environment, and the app is now running on the emulator with correct team number.                                |                       |
+| sz77               | Successfully set up the project environment, and the app is now running on the emulator with correct team number.                                |                       |
+| sinjass2               | Successfully set up the project environment, and the app is now running on the emulator with correct team number.                                |                       |
+| ahalsi2               | Successfully set up the project environment, and the app is now running on the emulator with correct team number.                                |                       |
 </br>
+
 
 
 <b>Week 2</b>
