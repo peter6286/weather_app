@@ -59,14 +59,15 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| ap73           | Completed the Informal Requirements and part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team.                      |
+| xuehail2       | Lead the disccusion during the team meeting. Followed up with TA. Completed the Informal Requirements and part of the Use Case with the team.                                | Complete Use Case 4&5. Complete the Class diagram and the Component Transition Graph with the team.                     |
+| yafengl2       | Completed Use Case the template. Completed the Informal Requirements and part of the Use Case with the team.                                | Complete weekly meeting notes. Update the use case section to table format. Follow up with TA. Complete the Class diagram and the Component Transition Graph with the team.
+|
+| aaleid2        | Completed part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team. .                      |
+| quanhn2        | Completed the Informal Requirements and part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team. .                      |
+| sz77           | Completed the Informal Requirements and part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team. .                      |
+| sinjass2       | Completed the Informal Requirements and part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team. .                      |
+| ahalsi2        | Completed the Informal Requirements and part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team. .                      |
 </br>
 
 
