@@ -60,7 +60,7 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
 | ap73           | Completed the Informal Requirements and part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team.                      |
-| xuehail2       | Lead the disccusion during the team meeting. Followed up with TA. Completed the Informal Requirements and part of the Use Case with the team.                                | Complete Use Case 4&5. Complete the Class diagram and the Component Transition Graph with the team.                     |
+| xuehail2       | Lead the discussion during the team meeting. Followed up with TA. Completed the Informal Requirements and part of the Use Case with the team.                                | Complete Use Case 4&5. Complete the Class diagram and the Component Transition Graph with the team.                     |
 | yafengl2       | Completed Use Case the template. Completed the Informal Requirements and part of the Use Case with the team. | Complete weekly meeting notes. Update the use case section to table format. Follow up with TA. Complete the Class diagram and the Component Transition Graph with the team. |
 | aaleid2        | Completed part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team. .                      |
 | quanhn2        | Completed the Informal Requirements and part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team. .                      |
@@ -78,14 +78,14 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| ap73           | Engaged in a collective discussion regarding the Class diagram and the Component Transition Graph, working together to make necessary updates.  | Review the Milestone 3 assignment requirement and have a team discussion about the initial step.  |
+| xuehail2       | Lead the discussion during the team meeting. Took the initial step in creating the Class diagram and the Component Transition Graph. Engaged in a collective discussion regarding the Class diagram and the Component Transition Graph, working together to make necessary updates.| Review the Milestone 3 assignment requirement and have a team discussion about the initial step.|
+| yafengl2       | Complete weekly meeting notes. Updated the use case section to table format. Follow up with TA. Engaged in a collective discussion regarding the Class diagram and the Component Transition Graph, working together to make necessary updates.| Review the Milestone 3 assignment requirement and have a team discussion about the initial step.|
+| aaleid2        | Engaged in a collective discussion regarding the Class diagram and the Component Transition Graph, working together to make necessary updates.                                | Review the Milestone 3 assignment requirement and have a team discussion about the initial step.|
+| quanhn2        | Took the initial step in creating the Class diagram. Engaged in a collective discussion regarding the Class diagram and the Component Transition Graph, working together to make necessary updates. | Review the Milestone 3 assignment requirement and have a team discussion about the initial step.|
+| sz77           | Engaged in a collective discussion regarding the Class diagram and the Component Transition Graph, working together to make necessary updates.                                | Review the Milestone 3 assignment requirement and have a team discussion about the initial step.|
+| sinjass2       | Engaged in a collective discussion regarding the Class diagram and the Component Transition Graph, working together to make necessary updates.                                | Review the Milestone 3 assignment requirement and have a team discussion about the initial step.|
+| ahalsi2        | Engaged in a collective discussion regarding the Class diagram and the Component Transition Graph, working together to make necessary updates.                                | Review the Milestone 3 assignment requirement and have a team discussion about the initial step.|
 </br>
 
 
