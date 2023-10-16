@@ -3,29 +3,33 @@ The code for CS427 Android app.
 <br/>
 <br/>
 
-<b>Team # member information</b>
+<b>Team 19 member information</b>
 <br/>
 | Name          | NetID         | GitHub ID   | Role          | Experience    |
 | ------------- | ------------- | ------------| ------------- | ------------- |
-| Anirudh Prasad              | ap73              | aniprasad            |  TBD             | C++, C#              |            
-| Sherry Li     |  xuehail2             |  sherrylinice           | TBD              | Python, Java              |
-| Yafeng Liu              | yafengl2      | ya7eng | TBD             | Python |
-| Amjad Aleid              | aaleid2              | jadd120            | TBD              | javascript, java, scala, SQL              |
+| Anirudh Prasad              | ap73              | aniprasad            |  Developer             | C++, C#              |            
+| Sherry Li     |  xuehail2             |  sherrylinice           | Developer              | Python, Java, SQL              |
+| Yafeng Liu              | yafengl2      | ya7eng | Manager             | Python |
+| Amjad Aleid              | aaleid2              | jadd120            | Developer              | javascript, java, scala, SQL              |
 | Quan Nguyen                 | quanhn2              | quannhoang            | Developer              |  Python, Javascript             |
 | Shuorong Zhu                | sz77              | shz6286            | Developer              |  Python, Java , SQL            |
-|               |               |             |               |               |
-|               |               |             |               |               |
-|               |               |             |               |               |
+| Sinja Sanandan              | sinjass2             | sinjasanandan           | Developer             | Python, Java, C++, SQL              |
+| Aviral Singh Halsi              | ahalsi2            | avireusdev11            |   Tech Leader            | Flutter, Java, Python, NodeJs              |
+
 <br/>
 
 
 <b>Weekly Progress Reports</b>
 </br> 
 </br>
-Meeting time: 
+Meeting time: 9:15 - 10:15PM CST on Monday (mandatory), 9:15 - 10:15PM CST on Friday (optional)
 </br> 
-Meeting location (zoom link):
+Meeting location (zoom link): 
+</br>
+Monday: https://illinois.zoom.us/j/86035191615?pwd=QXR3TklVejkvSUJUV2NJVzNGemVYdz09
 </br> 
+Friday: https://illinois.zoom.us/j/84337550559?pwd=N0tHYnYwM3FPaVU4RCthN0wwUVgvQT09
+</br>
 </br>
 <b>Week 1</b>
 </br>
@@ -35,15 +39,16 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| ap73               | Scheduled a time for our weekly meetings. Successfully set up the project environment, and the app is now running on the emulator with correct team number.  | Mitchell recommends watching this video (https://www.youtube.com/watch?v=tZvjSl9dswg) as part of your preparation for the next step. You don't have to watch the entire 4 hours in one go; feel free to watch at your own pace. If you're already familiar with the initial setup, you can skip ahead to 41:32, as everyone has completed that part.                       |
+| xuehail2               | Scheduled a time for our weekly meetings. Successfully set up the project environment, and the app is now running on the emulator with correct team number. | Mitchell recommends watching this video (https://www.youtube.com/watch?v=tZvjSl9dswg) as part of your preparation for the next step. You don't have to watch the entire 4 hours in one go; feel free to watch at your own pace. If you're already familiar with the initial setup, you can skip ahead to 41:32, as everyone has completed that part.                       |
+| yafengl2               | Scheduled a time for our weekly meetings. Successfully set up the project environment, and the app is now running on the emulator with correct team number. | Mitchell recommends watching this video (https://www.youtube.com/watch?v=tZvjSl9dswg) as part of your preparation for the next step. You don't have to watch the entire 4 hours in one go; feel free to watch at your own pace. If you're already familiar with the initial setup, you can skip ahead to 41:32, as everyone has completed that part.                       |
+| aaleid2               | Scheduled a time for our weekly meetings. Successfully set up the project environment, and the app is now running on the emulator with correct team number. | Mitchell recommends watching this video (https://www.youtube.com/watch?v=tZvjSl9dswg) as part of your preparation for the next step. You don't have to watch the entire 4 hours in one go; feel free to watch at your own pace. If you're already familiar with the initial setup, you can skip ahead to 41:32, as everyone has completed that part.                       |
+| quanhn2               | Scheduled a time for our weekly meetings. Successfully set up the project environment, and the app is now running on the emulator with correct team number.  | Mitchell recommends watching this video (https://www.youtube.com/watch?v=tZvjSl9dswg) as part of your preparation for the next step. You don't have to watch the entire 4 hours in one go; feel free to watch at your own pace. If you're already familiar with the initial setup, you can skip ahead to 41:32, as everyone has completed that part.                       |
+| sz77               | Scheduled a time for our weekly meetings. Successfully set up the project environment, and the app is now running on the emulator with correct team number.  | Mitchell recommends watching this video (https://www.youtube.com/watch?v=tZvjSl9dswg) as part of your preparation for the next step. You don't have to watch the entire 4 hours in one go; feel free to watch at your own pace. If you're already familiar with the initial setup, you can skip ahead to 41:32, as everyone has completed that part.                       |
+| sinjass2               | Scheduled a time for our weekly meetings. Successfully set up the project environment, and the app is now running on the emulator with correct team number.  | Mitchell recommends watching this video (https://www.youtube.com/watch?v=tZvjSl9dswg) as part of your preparation for the next step. You don't have to watch the entire 4 hours in one go; feel free to watch at your own pace. If you're already familiar with the initial setup, you can skip ahead to 41:32, as everyone has completed that part.                       |
+| ahalsi2               | Scheduled a time for our weekly meetings. Successfully set up the project environment, and the app is now running on the emulator with correct team number.   | Mitchell recommends watching this video (https://www.youtube.com/watch?v=tZvjSl9dswg) as part of your preparation for the next step. You don't have to watch the entire 4 hours in one go; feel free to watch at your own pace. If you're already familiar with the initial setup, you can skip ahead to 41:32, as everyone has completed that part.                       |
 </br>
+
 
 
 <b>Week 2</b>
@@ -54,14 +59,14 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| ap73           | Completed the Informal Requirements and part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team.                      |
+| xuehail2       | Lead the disccusion during the team meeting. Followed up with TA. Completed the Informal Requirements and part of the Use Case with the team.                                | Complete Use Case 4&5. Complete the Class diagram and the Component Transition Graph with the team.                     |
+| yafengl2       | Completed Use Case the template. Completed the Informal Requirements and part of the Use Case with the team. | Complete weekly meeting notes. Update the use case section to table format. Follow up with TA. Complete the Class diagram and the Component Transition Graph with the team. |
+| aaleid2        | Completed part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team. .                      |
+| quanhn2        | Completed the Informal Requirements and part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team. .                      |
+| sz77           | Completed the Informal Requirements and part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team. .                      |
+| sinjass2       | Completed the Informal Requirements and part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team. .                      |
+| ahalsi2        | Completed the Informal Requirements and part of the Use Case with the team.                                | Complete the Class diagram and the Component Transition Graph with the team. .                      |
 </br>
 
 
