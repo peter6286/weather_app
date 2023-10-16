@@ -28,6 +28,7 @@ android {
     buildFeatures {
         viewBinding true
     }
+    namespace 'edu.uiuc.cs427app'
 }
 
 dependencies {
