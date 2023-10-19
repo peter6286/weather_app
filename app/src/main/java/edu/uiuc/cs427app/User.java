@@ -10,7 +10,7 @@ public class User {
 
     @PrimaryKey(autoGenerate = true)
     @NonNull
-    public int UserID;
+    public int userID;
 
     public String email;
     public String firstName;

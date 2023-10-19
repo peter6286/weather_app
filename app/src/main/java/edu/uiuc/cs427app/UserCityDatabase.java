@@ -9,11 +9,12 @@ import androidx.room.RoomDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {User.class, City.class}, version = 1, exportSchema = false)
+@Database(entities = {User.class, City.class, LinkUserCity.class}, version = 1, exportSchema = false)
 public abstract class UserCityDatabase extends RoomDatabase{
 
     public abstract UserDao userDao();
     public abstract CityDao cityDao();
+    public abstract LinkUserCityDao linkUserCityDao();
 
     private static volatile UserCityDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
