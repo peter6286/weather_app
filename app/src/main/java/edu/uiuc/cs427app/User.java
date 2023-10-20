@@ -1,5 +1,7 @@
 package edu.uiuc.cs427app;
 
+import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -25,4 +27,72 @@ public class User {
     public String lastName;
     public String password;
     public String themePreference;
+    public List<City> cityList;
+
+
+    // Getter and Setter methods
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setlastNameName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getThemePreference() {
+        return themePreference;
+    }
+
+    public void setThemePreference(String themePreference) {
+        this.themePreference = themePreference;
+    }
+
+    public List<City> getCityList() {
+        return cityList;
+    }
+
+
+    
+    public void addCity(City city) {
+        cityList.add(city);
+    }
+
+    public void removeCity(City city) {
+        cityList.remove(city);
+    }
+
 }
+
