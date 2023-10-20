@@ -24,7 +24,7 @@ public interface UserDao {
     void insert(User user);
 
     /**
-     * Retrieves a list of users based on their first name and last name.
+     * Retrieves a list of users based on their user name.
      *
      * @param userName The name of the users to search for.
      * @return A list of User objects matching the specified user name criteria.

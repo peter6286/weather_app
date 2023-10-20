@@ -100,12 +100,12 @@ public class UserCityDatabaseReadWriteTest {
         link2.cityID = cityID2;
         linkUserCityDao.insert(link2);
 
-        List<City> userCities1 = linkUserCityDao.findCitiesByUserId(userName);
+        List<City> userCities1 = linkUserCityDao.findCitiesByUserName(userName);
         Assert.assertEquals(userCities1.size(), 2);
 
         linkUserCityDao.deleteLinkUserCity(userName, cityID1);
 
-        List<City> userCities2 = linkUserCityDao.findCitiesByUserId(userName);
+        List<City> userCities2 = linkUserCityDao.findCitiesByUserName(userName);
         Assert.assertEquals(userCities2.size(), 1);
         Assert.assertEquals(userCities2.get(0).cityID, cityID2);
         Assert.assertEquals(userCities2.get(0).cityName, city2.cityName);

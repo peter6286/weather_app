@@ -32,7 +32,7 @@ public interface LinkUserCityDao {
      */
     @Query("SELECT c.* FROM Cities AS c JOIN LinkUsersCities AS uc ON c.cityID = uc.cityID " +
             "WHERE uc.userName = :userName")
-    List<City> findCitiesByUserId(String userName);
+    List<City> findCitiesByUserName(String userName);
 
     /**
      * Deletes a link between a user and a city from the database.

@@ -8,8 +8,8 @@ import androidx.room.PrimaryKey;
 /**
  * Represents a User in the database.
  *
- * This entity class is used to store user information, including their email, name, password,
- * and theme preference.
+ * This entity class is used to store user information, including their email, username,
+ * first name, last name, password and theme preference.
  *
  * @author Sherry Li
  * @version 10/19/2023
@@ -20,7 +20,6 @@ public class User {
     @PrimaryKey
     @NonNull
     public String userName;
-
     public String email;
     public String firstName;
     public String lastName;

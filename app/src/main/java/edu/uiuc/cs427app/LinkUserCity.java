@@ -10,7 +10,7 @@ import androidx.room.PrimaryKey;
  * Represents a link between users and cities in the database.
  *
  * This entity class is used to establish a many-to-many relationship between User and City entities
- * by maintaining a mapping of user IDs and city IDs.
+ * by maintaining a mapping of usernames and city IDs.
  *
  * @author Sherry Li
  * @version 10/19/2023
