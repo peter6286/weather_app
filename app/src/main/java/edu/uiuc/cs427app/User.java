@@ -17,9 +17,9 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "Users")
 public class User {
 
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     @NonNull
-    public int userID;
+    public String userName;
 
     public String email;
     public String firstName;

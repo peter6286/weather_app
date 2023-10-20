@@ -15,14 +15,14 @@ import androidx.room.PrimaryKey;
  * @author Sherry Li
  * @version 10/19/2023
  */
-@Entity(tableName = "LinkUsersCities", foreignKeys = {
-        @ForeignKey(entity = User.class, parentColumns = "userID", childColumns = "userID", onDelete = ForeignKey.CASCADE),
+@Entity(tableName = "LinkUsersCities", primaryKeys = {"userName", "cityID"}, foreignKeys = {
+        @ForeignKey(entity = User.class, parentColumns = "userName", childColumns = "userName", onDelete = ForeignKey.CASCADE),
         @ForeignKey(entity = City.class, parentColumns = "cityID", childColumns = "cityID", onDelete = ForeignKey.CASCADE)
-}, indices = {@Index(value = {"userID"})})
+}, indices = {@Index(value = {"userName"}), @Index(value = {"cityID"})})
 public class LinkUserCity {
-    @PrimaryKey(autoGenerate = true)
     @NonNull
-    public int id;
-    public int userID;
+    public String userName;
+
+    @NonNull
     public int cityID;
 }

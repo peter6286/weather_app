@@ -41,14 +41,12 @@ public class UserCityDatabaseReadWriteTest {
     @Test
     public void writeUserAndReadInList() throws Exception {
         User user = new User();
-        user.firstName = "abc";
-        user.lastName = "def";
+        user.userName = "abc";
         user.password = "123";
         userDao.insert(user);
-        List<User> usersByName = userDao.findUsersByName("abc", "def");
+        List<User> usersByName = userDao.findUsersByName("abc");
         Assert.assertEquals(usersByName.size(), 1);
-        Assert.assertEquals(usersByName.get(0).firstName, "abc");
-        Assert.assertEquals(usersByName.get(0).lastName, "def");
+        Assert.assertEquals(usersByName.get(0).userName, "abc");
         Assert.assertEquals(usersByName.get(0).password, "123");
     }
 
@@ -69,8 +67,7 @@ public class UserCityDatabaseReadWriteTest {
     @Test
     public void updateLinkUserCity() throws Exception {
         User user = new User();
-        user.firstName = "user1FirstName";
-        user.lastName = "user1LastName";
+        user.userName = "user1Name";
         userDao.insert(user);
 
         City city1 = new City();
@@ -85,8 +82,8 @@ public class UserCityDatabaseReadWriteTest {
         city2.countryName = "def";
         cityDao.insert(city2);
 
-        List<User> usersByName = userDao.findUsersByName(user.firstName, user.lastName);
-        int userID = usersByName.get(0).userID;
+        List<User> usersByName = userDao.findUsersByName(user.userName);
+        String userName = usersByName.get(0).userName;
 
         List<City> citiesByName1 = cityDao.findCitiesByName(city1.cityName, city1.stateOrRegionName, city1.countryName);
         List<City> citiesByName2 = cityDao.findCitiesByName(city2.cityName, city2.stateOrRegionName, city2.countryName);
@@ -94,21 +91,21 @@ public class UserCityDatabaseReadWriteTest {
         int cityID2 = citiesByName2.get(0).cityID;
 
         LinkUserCity link1 = new LinkUserCity();
-        link1.userID = userID;
+        link1.userName = userName;
         link1.cityID = cityID1;
         linkUserCityDao.insert(link1);
 
         LinkUserCity link2 = new LinkUserCity();
-        link2.userID = userID;
+        link2.userName = userName;
         link2.cityID = cityID2;
         linkUserCityDao.insert(link2);
 
-        List<City> userCities1 = linkUserCityDao.findCitiesByUserId(userID);
+        List<City> userCities1 = linkUserCityDao.findCitiesByUserId(userName);
         Assert.assertEquals(userCities1.size(), 2);
 
-        linkUserCityDao.deleteLinkUserCity(userID, cityID1);
+        linkUserCityDao.deleteLinkUserCity(userName, cityID1);
 
-        List<City> userCities2 = linkUserCityDao.findCitiesByUserId(userID);
+        List<City> userCities2 = linkUserCityDao.findCitiesByUserId(userName);
         Assert.assertEquals(userCities2.size(), 1);
         Assert.assertEquals(userCities2.get(0).cityID, cityID2);
         Assert.assertEquals(userCities2.get(0).cityName, city2.cityName);

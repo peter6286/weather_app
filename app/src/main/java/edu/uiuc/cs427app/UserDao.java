@@ -26,10 +26,9 @@ public interface UserDao {
     /**
      * Retrieves a list of users based on their first name and last name.
      *
-     * @param firstName The first name of the users to search for.
-     * @param lastName  The last name of the users to search for.
-     * @return A list of User objects matching the specified first name and last name criteria.
+     * @param userName The name of the users to search for.
+     * @return A list of User objects matching the specified user name criteria.
      */
-    @Query("SELECT * FROM Users WHERE firstName = :firstName AND lastName = :lastName")
-    List<User> findUsersByName(String firstName, String lastName);
+    @Query("SELECT * FROM Users WHERE userName = :userName")
+    List<User> findUsersByName(String userName);
 }

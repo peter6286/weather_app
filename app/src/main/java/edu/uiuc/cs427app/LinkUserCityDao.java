@@ -27,19 +27,19 @@ public interface LinkUserCityDao {
     /**
      * Retrieves a list of cities associated with a specific user.
      *
-     * @param userID The ID of the user whose associated cities are to be retrieved.
+     * @param userName The name of the user whose associated cities are to be retrieved.
      * @return A list of City objects associated with the specified user.
      */
     @Query("SELECT c.* FROM Cities AS c JOIN LinkUsersCities AS uc ON c.cityID = uc.cityID " +
-            "WHERE uc.userID = :userID")
-    List<City> findCitiesByUserId(int userID);
+            "WHERE uc.userName = :userName")
+    List<City> findCitiesByUserId(String userName);
 
     /**
      * Deletes a link between a user and a city from the database.
      *
-     * @param userID The ID of the user to unlink from the city.
+     * @param userName The name of the user to unlink from the city.
      * @param cityID The ID of the city to unlink from the user.
      */
-    @Query("DELETE FROM LinkUsersCities WHERE userID = :userID AND cityID = :cityID")
-    void deleteLinkUserCity(int userID, int cityID);
+    @Query("DELETE FROM LinkUsersCities WHERE userName = :userName AND cityID = :cityID")
+    void deleteLinkUserCity(String userName, int cityID);
 }
