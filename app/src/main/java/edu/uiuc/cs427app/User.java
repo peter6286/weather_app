@@ -5,6 +5,15 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+/**
+ * Represents a User in the database.
+ *
+ * This entity class is used to store user information, including their email, name, password,
+ * and theme preference.
+ *
+ * @author Sherry Li
+ * @version 10/19/2023
+ */
 @Entity(tableName = "Users")
 public class User {
 
