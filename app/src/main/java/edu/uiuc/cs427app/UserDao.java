@@ -11,6 +11,7 @@ import java.util.List;
  * Data Access Object (DAO) interface for performing database operations related to the User entity.
  *
  * @author Sherry Li
+ * @author Yafeng Liu
  * @version 10/19/2023
  */
 @Dao
@@ -41,5 +42,5 @@ public interface UserDao {
      * @return The number of users with the specified username.
      */
     @Query("SELECT COUNT(*) FROM Users WHERE userName = :userName")
-    boolean countUsersWithUsername(String userName);
+    boolean checkUserExistence(String userName);
 }
