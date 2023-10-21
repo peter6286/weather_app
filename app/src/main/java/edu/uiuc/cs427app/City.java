@@ -28,7 +28,7 @@ public class City {
         return cityID;
     }
 
-    public int setCityID(int cityID) {
+    public void setCityID(int cityID) {
         this.cityID = cityID;
     }
 

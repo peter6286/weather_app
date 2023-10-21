@@ -6,6 +6,9 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import java.util.List;
+import java.util.ArrayList;
+
 
 /**
  * Represents a User in the database.
@@ -28,6 +31,17 @@ public class User {
     public String password;
     public String themePreference;
     public List<City> cityList;
+
+
+    public User(String username, String email, String firstName, String lastName, String password, String themePreference) {
+        this.userName = username;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.themePreference = themePreference;
+        this.cityList = new ArrayList<>();
+    }
 
 
     // Getter and Setter methods
@@ -60,7 +74,7 @@ public class User {
         return lastName;
     }
 
-    public void setlastNameName(String lastName) {
+    public void setlastName(String lastName) {
         this.lastName = lastName;
     }
 
