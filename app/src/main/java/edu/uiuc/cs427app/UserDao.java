@@ -52,5 +52,5 @@ public interface UserDao {
      * @return The number of users with the specified username.
      */
     @Query("SELECT COUNT(*) FROM Users WHERE userName = :userName")
-    int countUsersWithUsername(String userName);
+    boolean countUsersWithUsername(String userName);
 }
