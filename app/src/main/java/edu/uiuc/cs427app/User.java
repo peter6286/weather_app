@@ -30,19 +30,17 @@ public class User {
     public String lastName;
     public String password;
     public String themePreference;
-    public List<City> cityList;
 
+    public User() {}
 
-    public User(String username, String email, String firstName, String lastName, String password, String themePreference) {
-        this.userName = username;
+    public User(String userName, String email, String firstName, String lastName, String password, String themePreference) {
+        this.userName = userName;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.themePreference = themePreference;
-        this.cityList = new ArrayList<>();
     }
-
 
     // Getter and Setter methods
 
@@ -92,22 +90,6 @@ public class User {
 
     public void setThemePreference(String themePreference) {
         this.themePreference = themePreference;
-    }
-
-    public List<City> getCityList() {
-        return cityList;
-    }
-
-
-    
-    public void addCity(City city) {
-        if (!cityList.contains(city)) {
-            cityList.add(city);
-        }
-    }
-
-    public void removeCity(City city) {
-        cityList.remove(city);
     }
 
 }
