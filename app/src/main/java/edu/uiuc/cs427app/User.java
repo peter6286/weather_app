@@ -16,13 +16,10 @@ import androidx.room.PrimaryKey;
  */
 @Entity(tableName = "Users")
 public class User {
-    public User(@NonNull String userName, String email, String firstName, String lastName, String password, String themePreference) {
+    public User(@NonNull String userName, String password) {
         this.userName = userName;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
+
         this.password = password;
-        this.themePreference = themePreference;
     }
 
     @PrimaryKey
@@ -33,8 +30,6 @@ public class User {
     public String lastName;
     public String password;
 
-    public User(String existingUser, String existingPassword) {
-    }
 
     @NonNull
     public String getUserName() {
