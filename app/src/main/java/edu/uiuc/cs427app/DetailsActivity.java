@@ -2,11 +2,8 @@ package edu.uiuc.cs427app;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,7 +20,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         String cityWeatherInfo = "Detailed information about the weather of "+cityName;
 
         // Initializing the GUI elements
-        TextView welcomeMessage = findViewById(R.id.welcomeText);
+        TextView welcomeMessage = findViewById(R.id.signInText);
         TextView cityInfoMessage = findViewById(R.id.cityInfo);
 
         welcomeMessage.setText(welcome);
