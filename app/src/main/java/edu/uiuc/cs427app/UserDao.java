@@ -11,6 +11,7 @@ import java.util.List;
  * Data Access Object (DAO) interface for performing database operations related to the User entity.
  *
  * @author Sherry Li
+ * @author Yafeng Liu
  * @version 10/19/2023
  */
 @Dao
@@ -37,20 +38,9 @@ public interface UserDao {
     /**
      * Checks if a specific username exists in the database.
      *
-     * Usage:
-     * ```java
-     * UserDao userDao = db.userDao();
-     * int count = userDao.countUsersWithUsername("desiredUsername");
-     * if(count > 0) {
-     *     // Username exists
-     * } else {
-     *     // Username does not exist
-     * }
-     * ```
-     *
      * @param userName The name of the user to search for.
      * @return The number of users with the specified username.
      */
     @Query("SELECT COUNT(*) FROM Users WHERE userName = :userName")
-    int countUsersWithUsername(String userName);
+    boolean checkUserExistence(String userName);
 }
