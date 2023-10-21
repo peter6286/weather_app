@@ -37,17 +37,6 @@ public interface UserDao {
     /**
      * Checks if a specific username exists in the database.
      *
-     * Usage:
-     * ```java
-     * UserDao userDao = db.userDao();
-     * int count = userDao.countUsersWithUsername("desiredUsername");
-     * if(count > 0) {
-     *     // Username exists
-     * } else {
-     *     // Username does not exist
-     * }
-     * ```
-     *
      * @param userName The name of the user to search for.
      * @return The number of users with the specified username.
      */
