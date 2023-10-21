@@ -31,7 +31,7 @@ public interface UserDao {
      */
     @Query("SELECT * FROM Users WHERE userName = :userName")
     List<User> findUsersByName(String userName);
-}
+
 
 
     /**
