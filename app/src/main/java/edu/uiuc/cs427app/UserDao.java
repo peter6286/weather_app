@@ -32,3 +32,25 @@ public interface UserDao {
     @Query("SELECT * FROM Users WHERE userName = :userName")
     List<User> findUsersByName(String userName);
 }
+
+
+    /**
+     * Checks if a specific username exists in the database.
+     *
+     * Usage:
+     * ```java
+     * UserDao userDao = db.userDao();
+     * int count = userDao.countUsersWithUsername("desiredUsername");
+     * if(count > 0) {
+     *     // Username exists
+     * } else {
+     *     // Username does not exist
+     * }
+     * ```
+     *
+     * @param userName The name of the user to search for.
+     * @return The number of users with the specified username.
+     */
+    @Query("SELECT COUNT(*) FROM Users WHERE userName = :userName")
+    int countUsersWithUsername(String userName);
+}
