@@ -101,7 +101,9 @@ public class User {
 
     
     public void addCity(City city) {
-        cityList.add(city);
+        if (!cityList.contains(city)) {
+            cityList.add(city);
+        }
     }
 
     public void removeCity(City city) {

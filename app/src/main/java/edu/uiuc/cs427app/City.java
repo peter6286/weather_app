@@ -71,4 +71,15 @@ public class City {
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        City otherCity = (City) obj;
+        return cityID == otherCity.cityID;
+    }
+
 }
