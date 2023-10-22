@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * This entity class is used to store user information, including their email, username,
  * first name, last name, password and theme preference.
  *
- * @author Sherry Li
+ * @author Sherry Li, Sinja Sanandan
  * @version 10/19/2023
  */
 @Entity(tableName = "Users")
@@ -24,12 +24,12 @@ public class User {
 
     @PrimaryKey
     @NonNull
-    public String userName;
-    public String email;
-    public String firstName;
-    public String lastName;
-    public String password;
-    public String themePreference;
+    private String userName;
+    private String email;
+    private String firstName;
+    private String lastName;
+    private String password;
+    private String themePreference;
 
     public User() {}
 
@@ -72,7 +72,7 @@ public class User {
         return lastName;
     }
 
-    public void setlastName(String lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 

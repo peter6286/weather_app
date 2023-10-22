@@ -37,7 +37,7 @@ public class CityListAdapter extends ArrayAdapter<City> {
         City city = getItem(position);
 
         if (city != null) {
-            cityNameView.setText(city.cityName);
+            cityNameView.setText(city.getCityName());
 
             removeButton.setOnClickListener(new View.OnClickListener() {
                 @Override
