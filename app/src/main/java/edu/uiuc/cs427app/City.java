@@ -1,5 +1,4 @@
 package edu.uiuc.cs427app;
-
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
