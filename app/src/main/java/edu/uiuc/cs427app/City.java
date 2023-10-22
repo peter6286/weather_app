@@ -82,7 +82,7 @@ public class City {
             return false;
         }
         City otherCity = (City) obj;
-        return cityID == otherCity.cityID;
+        return (cityID == otherCity.cityID && cityName.equals(otherCity.cityName) && stateOrRegionName.equals(otherCity.stateOrRegionName) && countryName.equals(otherCity.countryName));
     }
 
 }
