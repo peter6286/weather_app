@@ -6,20 +6,29 @@ import androidx.room.PrimaryKey;
 /**
  * Define this class as an entity representing the "Cities" table in the database.
  *
- * @author Sherry Li
+ * @author Sherry Li, Sinja Sanandan
  * @version 10/19/2023
  */
 @Entity(tableName = "Cities")
 public class City {
     @PrimaryKey(autoGenerate = true)
     @NonNull
-    public int cityID;
-    public String cityName;
-    public String stateOrRegionName;
-    public String countryName;
-    public double latitude;
-    public double longitude;
+    private int cityID;
+    private String cityName;
+    private String stateOrRegionName;
+    private String countryName;
+    private double latitude;
+    private double longitude;
 
+    public City() {}
+
+    public City(String cityName, String stateOrRegionName, String countryName, double latitude, double longitude) {
+        this.cityName = cityName;
+        this.stateOrRegionName = stateOrRegionName;
+        this.countryName = countryName;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
 
     // Getter and Setter Methods
 
@@ -71,7 +80,7 @@ public class City {
         this.longitude = longitude;
     }
 
-
+    private static final double EPSILON = 1e-9;
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -80,8 +89,16 @@ public class City {
         if (obj == null) {
             return false;
         }
+        if (this.getClass() != obj.getClass()) {
+            return false;
+        }
         City otherCity = (City) obj;
-        return (cityID == otherCity.cityID && cityName.equals(otherCity.cityName) && stateOrRegionName.equals(otherCity.stateOrRegionName) && countryName.equals(otherCity.countryName));
+        return (cityID == otherCity.cityID &&
+                cityName.equals(otherCity.cityName) &&
+                stateOrRegionName.equals(otherCity.stateOrRegionName) &&
+                countryName.equals(otherCity.countryName) &&
+                Math.abs(latitude - otherCity.latitude) < EPSILON &&
+                Math.abs(longitude - otherCity.longitude) < EPSILON);
     }
 
 }

@@ -31,7 +31,7 @@ public class AddCityActivity extends AppCompatActivity implements View.OnClickLi
                     Intent data = result.getData();
                     String cityName = data.getStringExtra("cityName");
                     City newCity = new City();
-                    newCity.cityName = cityName;
+                    newCity.setCityName(cityName);
                     cities.add(newCity);
                     customAdapter.notifyDataSetChanged();
                 }
@@ -40,7 +40,7 @@ public class AddCityActivity extends AppCompatActivity implements View.OnClickLi
 
     private City GetCityByCityName(String cityName) {
         City city = new City();
-        city.cityName = cityName;
+        city.setCityName(cityName);
         return city;
     }
 
