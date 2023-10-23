@@ -100,9 +100,9 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 | ap73           | Added addCityActivity and removeCityActivity. | Integrate city activity with database calls. |
 | xuehail2       |                                 |                       |
 | yafengl2       |                                 |                       |
-| aaleid2        |                                 |                       |
+| aaleid2        | Hold off until both the front activity and the database have finished their respective tasks. | Incorporate backend functionality and implement business logic to establish a linkage between the frontend activity, UI and the database.|
 | quanhn2        |                                 |                       |
-| sz77           |                                 |                       |
+| sz77           | Hold off until both the front activity and the database have finished their respective tasks. | Incorporate backend functionality and implement business logic to establish a linkage between the frontend activity, UI and the database.|
 | sinjass2       |                                 |                       |
 | ahalsi2        |                                 |                       |
 </br>
