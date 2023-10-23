@@ -97,14 +97,14 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| ap73           | Added addCityActivity and removeCityActivity. | Integrate city activity with database calls. |
+| xuehail2       |                                 |                       |
+| yafengl2       |                                 |                       |
+| aaleid2        |                                 |                       |
+| quanhn2        |                                 |                       |
+| sz77           |                                 |                       |
+| sinjass2       |                                 |                       |
+| ahalsi2        |                                 |                       |
 </br>
 
 
