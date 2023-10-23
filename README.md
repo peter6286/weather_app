@@ -98,13 +98,13 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
 | ap73           | Added addCityActivity and removeCityActivity. | Integrate city activity with database calls. |
-| xuehail2       |                                 |                       |
-| yafengl2       |                                 |                       |
+| xuehail2       | Lead the discussion during the team meeting. Follow up with TA. Added Users, Cities and LinkUsersCities tables to the database. Added queries to add or retrieve a user and city relation.| Collaborate with the team to complete the necessary adjustments for Milestone 3.|
+| yafengl2       | Complete weekly meeting notes. Follow up with TA. Contribute to Users database and test case.                                 | Complete a video. Complete weekly meeting notes.                      |
 | aaleid2        | Hold off until both the front activity and the database have finished their respective tasks. | Incorporate backend functionality and implement business logic to establish a linkage between the frontend activity, UI and the database.|
-| quanhn2        |                                 |                       |
+| quanhn2        | Added landingPageActivity, signInActivity and signUpActivity.| Collaborate with the team to complete the necessary adjustments for Milestone 3.|
 | sz77           | Hold off until both the front activity and the database have finished their respective tasks. | Incorporate backend functionality and implement business logic to establish a linkage between the frontend activity, UI and the database.|
-| sinjass2       |                                 |                       |
-| ahalsi2        |                                 |                       |
+| sinjass2       | Added getter and setter methods to User and City classes.| Collaborate with the team to complete the necessary adjustments for Milestone 3.|
+| ahalsi2        | Hold off until database have finished their respective tasks. | Add homePageActivity. Ensure no use case is hard-coded in the project. |
 </br>
 
 
