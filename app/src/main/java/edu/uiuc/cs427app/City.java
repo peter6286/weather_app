@@ -1,5 +1,4 @@
 package edu.uiuc.cs427app;
-
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -7,7 +6,7 @@ import androidx.room.PrimaryKey;
 /**
  * Define this class as an entity representing the "Cities" table in the database.
  *
- * @author Sherry Li
+ * @author Sherry Li, Sinja Sanandan
  * @version 10/19/2023
  */
 @Entity(tableName = "Cities")

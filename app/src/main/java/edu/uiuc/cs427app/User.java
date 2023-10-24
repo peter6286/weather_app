@@ -1,9 +1,14 @@
 package edu.uiuc.cs427app;
 
+import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import java.util.List;
+import java.util.ArrayList;
+
 
 /**
  * Represents a User in the database.
@@ -11,7 +16,7 @@ import androidx.room.PrimaryKey;
  * This entity class is used to store user information, including their email, username,
  * first name, last name, password and theme preference.
  *
- * @author Sherry Li
+ * @author Sherry Li, Sinja Sanandan
  * @version 10/19/2023
  */
 @Entity(tableName = "Users")
@@ -82,3 +87,4 @@ public class User {
 
     public String themePreference;
 }
+
