@@ -44,7 +44,7 @@ public class ProfileManager {
     public SignUpResult signUp(String username, String password) {
         try {
             // Check if the username already exists
-            if (userDao.countUsersWithUsername(username) > 0) {
+            if (userDao.checkUserExistence(username)) {
                 List<User> users = userDao.findUsersByName(username);
                 User foundUser = users.get(0);
                 return new SignUpResult(false, "Username already exists.", foundUser);
@@ -65,7 +65,7 @@ public class ProfileManager {
     public SignInResult signIn(String username, String password) {
         try {
             // Check if the username exists
-            if (userDao.countUsersWithUsername(username) > 0) {
+            if (userDao.checkUserExistence(username)) {
                 List<User> users = userDao.findUsersByName(username);
                 User foundUser = users.get(0);
 
