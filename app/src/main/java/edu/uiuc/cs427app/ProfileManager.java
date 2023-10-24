@@ -57,7 +57,7 @@ public class ProfileManager {
             return new SignUpResult(true, "Successfully signed up.", newUser);
 
         } catch (Exception e) {
-            throw new RuntimeException("Error in the sign up");
+            throw new RuntimeException(e.toString(), e.getCause());
         }
     }
 

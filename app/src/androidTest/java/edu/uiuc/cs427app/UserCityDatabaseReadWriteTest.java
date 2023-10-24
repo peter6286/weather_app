@@ -40,7 +40,7 @@ public class UserCityDatabaseReadWriteTest {
 
     @Test
     public void writeUserAndReadInList() throws Exception {
-        User user = new User();
+        User user = new User("abc", "123");
         user.userName = "abc";
         user.password = "123";
         userDao.insert(user);
@@ -66,7 +66,7 @@ public class UserCityDatabaseReadWriteTest {
 
     @Test
     public void updateLinkUserCity() throws Exception {
-        User user = new User();
+        User user = new User("user1Name", "123");
         user.userName = "user1Name";
         userDao.insert(user);
 
