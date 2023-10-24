@@ -21,34 +21,27 @@ import java.util.ArrayList;
  */
 @Entity(tableName = "Users")
 public class User {
+    public User(@NonNull String userName, String password) {
+        this.userName = userName;
+
+        this.password = password;
+    }
 
     @PrimaryKey
     @NonNull
-    private String userName;
-    private String email;
-    private String firstName;
-    private String lastName;
-    private String password;
-    private String themePreference;
+    public String userName;
+    public String email;
+    public String firstName;
+    public String lastName;
+    public String password;
 
-    public User() {}
 
-    public User(String userName, String email, String firstName, String lastName, String password, String themePreference) {
-        this.userName = userName;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.password = password;
-        this.themePreference = themePreference;
-    }
-
-    // Getter and Setter methods
-
+    @NonNull
     public String getUserName() {
         return userName;
     }
 
-    public void setUserName(String userName) {
+    public void setUserName(@NonNull String userName) {
         this.userName = userName;
     }
 
@@ -92,5 +85,6 @@ public class User {
         this.themePreference = themePreference;
     }
 
+    public String themePreference;
 }
 

@@ -1,7 +1,10 @@
 package edu.uiuc.cs427app;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.test.core.app.ApplicationProvider;
+import androidx.room.Room;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,7 +13,10 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 public class SignUpActivity extends AppCompatActivity {
-
+    private UserDao userDao;
+    private CityDao cityDao;
+    private LinkUserCityDao linkUserCityDao;
+    private UserCityDatabase db;
     private EditText eUsername;
     private EditText ePassword;
     private EditText ePasswordConfirm;
@@ -18,6 +24,7 @@ public class SignUpActivity extends AppCompatActivity {
     private Button eSignUpButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        createDb();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
@@ -41,10 +48,27 @@ public class SignUpActivity extends AppCompatActivity {
                 else if (!inputPassword.equals(inputPasswordConfirm)) {
                     Toast.makeText(SignUpActivity.this, "Password fields do not match", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(SignUpActivity.this, "Signed up successfully", Toast.LENGTH_SHORT).show();
+                    ProfileManager PM = new ProfileManager();
+                    PM.userDao = userDao;
+                    ProfileManager.SignUpResult out = PM.signUp(inputUsername, inputPassword);
+                    if (out.isSuccess()) {
+                        Toast.makeText(SignUpActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(SignUpActivity.this, out.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
 
+    }
+
+    public void createDb() {
+        Context context = this;
+        db = Room.databaseBuilder(context, UserCityDatabase.class, "database").allowMainThreadQueries().build();
+        userDao = db.userDao();
+        cityDao = db.cityDao();
+        linkUserCityDao = db.linkUserCityDao();
     }
 }

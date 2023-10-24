@@ -49,7 +49,9 @@ public class UserCityDatabaseReadWriteTest {
      * Test for inserting a new user and reading the user from database.
      */
     public void writeUserAndReadInList() throws Exception {
-        User user = new User("abc", "abc@def.com", "a", "bc", "123", "preference");
+        User user = new User("abc", "123");
+        user.userName = "abc";
+        user.password = "123";
         userDao.insert(user);
         List<User> usersByName = userDao.findUsersByName("abc");
         Assert.assertEquals(usersByName.size(), 1);
@@ -79,7 +81,8 @@ public class UserCityDatabaseReadWriteTest {
      * Test for adding and removing cities associated with a user in the database.
      */
     public void updateLinkUserCity() throws Exception {
-        User user = new User("user1Name", "abc@def.com", "a", "bc", "123", "preference");
+        User user = new User("user1Name", "123");
+        user.userName = "user1Name";
         userDao.insert(user);
 
         City city1 = new City();
