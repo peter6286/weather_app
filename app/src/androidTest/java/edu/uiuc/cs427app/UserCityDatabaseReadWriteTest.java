@@ -112,4 +112,14 @@ public class UserCityDatabaseReadWriteTest {
         Assert.assertEquals(userCities2.get(0).stateOrRegionName, city2.stateOrRegionName);
         Assert.assertEquals(userCities2.get(0).countryName, city2.countryName);
     }
+
+    @Test
+    public void writeUserAndCheckExistence() throws Exception {
+        User user = new User();
+        user.userName = "abc";
+        user.password = "123";
+        userDao.insert(user);
+        boolean userExistence = userDao.checkUserExistence("abc");
+        Assert.assertTrue(userExistence);
+    }
 }
