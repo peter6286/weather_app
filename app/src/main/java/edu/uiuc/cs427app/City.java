@@ -13,12 +13,24 @@ import androidx.room.PrimaryKey;
 public class City {
     @PrimaryKey(autoGenerate = true)
     @NonNull
-    public int cityID;
-    public String cityName;
-    public String stateOrRegionName;
-    public String countryName;
-    public double latitude;
+    private int cityID;
+    private String cityName;
+    private String stateOrRegionName;
+    private String countryName;
+    private double latitude;
+    private double longitude;
 
+    public City() {}
+
+    public City(String cityName, String stateOrRegionName, String countryName, double latitude, double longitude) {
+        this.cityName = cityName;
+        this.stateOrRegionName = stateOrRegionName;
+        this.countryName = countryName;
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    // Getter and Setter methods
     public int getCityID() {
         return cityID;
     }
@@ -67,5 +79,25 @@ public class City {
         this.longitude = longitude;
     }
 
-    public double longitude;
+    // overriding equals() method
+    private static final double EPSILON = 1e-9;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+        City otherCity = (City) obj;
+        return (cityID == otherCity.cityID &&
+                cityName.equals(otherCity.cityName) &&
+                stateOrRegionName.equals(otherCity.stateOrRegionName) &&
+                countryName.equals(otherCity.countryName) &&
+                Math.abs(latitude - otherCity.latitude) < EPSILON &&
+                Math.abs(longitude - otherCity.longitude) < EPSILON);
+            }
 }

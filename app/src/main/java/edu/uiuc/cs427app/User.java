@@ -1,13 +1,9 @@
 package edu.uiuc.cs427app;
 
-import java.util.List;
-
 import androidx.annotation.NonNull;
-import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
-import java.util.List;
-import java.util.ArrayList;
 
 
 /**
@@ -21,21 +17,37 @@ import java.util.ArrayList;
  */
 @Entity(tableName = "Users")
 public class User {
-    public User(@NonNull String userName, String password) {
-        this.userName = userName;
-
-        this.password = password;
-    }
 
     @PrimaryKey
     @NonNull
-    public String userName;
-    public String email;
-    public String firstName;
-    public String lastName;
-    public String password;
+    private String userName;
+    private String email;
+    private String firstName;
+    private String lastName;
+    private String password;
 
+    private String colorTheme;
+    private String roundOrSquareButton;
+    private String fontSize;
 
+    public User(String userName, String email, String firstName, String lastName, String password, String colorTheme, String roundOrSquareButton, String fontSize) {
+        this.userName = userName;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.colorTheme = colorTheme;
+        this.roundOrSquareButton = roundOrSquareButton;
+        this.fontSize = fontSize;
+    }
+
+    @Ignore
+    public User(@NonNull String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+    }
+
+    // Getter and Setter methods
     @NonNull
     public String getUserName() {
         return userName;
@@ -77,14 +89,25 @@ public class User {
         this.password = password;
     }
 
-    public String getThemePreference() {
-        return themePreference;
+    public String getColorTheme() {
+        return colorTheme;
+    }
+    public void setColorTheme(String colorTheme) {
+        this.colorTheme = colorTheme;
+    }
+    public String getRoundOrSquareButton() {
+        return roundOrSquareButton;
+    }
+    public void setRoundOrSquareButton(String roundOrSquareButton) {
+        this.roundOrSquareButton = roundOrSquareButton;
     }
 
-    public void setThemePreference(String themePreference) {
-        this.themePreference = themePreference;
+    public String getFontSize() {
+        return fontSize;
+    }
+    public void setFontSize(String fontSize) {
+        this.fontSize = fontSize;
     }
 
-    public String themePreference;
 }
 
