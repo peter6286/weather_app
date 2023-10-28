@@ -4,6 +4,9 @@ import android.util.Log;
 
 import java.util.List;
 
+/** UserCityService class that houses the functionality to modify and retrieve
+a user's associated cities
+**/
 public class UserCityService {
 
     private final LinkUserCityDao linkUserCityDao;
@@ -14,12 +17,21 @@ public class UserCityService {
         this.cityDao = cityDao;
     }
 
-    // 1. List cities for a user
+    /** List cities for a user 
+        @param    userName    a user's unique name
+        return    a list of cities associated to user
+    **/
     public List<City> getCitiesForUser(String userName) {
         return linkUserCityDao.findCitiesByUserName(userName);
     }
 
-    // 2. Add a city to a user's list
+    /**  Add a city to a user's list 
+         @param    userName         a user's unique name
+         @param    cityName         city name
+         @param    stateOrRegion    state or region name
+         @param    countryName      a country name
+         return    addded City
+    **/
     public City addCityForUser(String userName, String cityName, String stateOrRegion, String countryName) {
         // 1. Check if the city exists in the database
         List<City> matchingCities = cityDao.findCitiesByName(cityName, stateOrRegion, countryName);
@@ -62,7 +74,11 @@ public class UserCityService {
     }
 
 
-    // 3. Remove a city from a user's list
+    /**  Remove a city from a user's list 
+         @param    userName         a user's unique name
+         @param    cityID           city unique identifier
+         return    removed City        
+    **/
     public List<City> removeCityForUser(String userName, int cityID) {
         try {
             linkUserCityDao.deleteLinkUserCity(userName, cityID);
