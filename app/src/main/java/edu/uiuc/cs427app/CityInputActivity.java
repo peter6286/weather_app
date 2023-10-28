@@ -26,6 +26,7 @@ public class CityInputActivity extends AppCompatActivity {
         uiManager = new UIManager();
         sharedPreferences = getSharedPreferences("UserUI", MODE_PRIVATE);
         String signedInUser = sharedPreferences.getString("userName", null);
+        setTitle(getString(R.string.app_name_with_arg, signedInUser));
         uiManager.preferences = sharedPreferences;
         boolean isDefaultTheme = uiManager.getThemePreference();
         // Set the theme based on the preference

@@ -52,8 +52,10 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
                 if (result.getResultCode() == RESULT_OK) {
                     Intent data = result.getData();
                     String cityName = data.getStringExtra("cityName");
+                    Integer cityId = data.getIntExtra("cityId", -1);
 
                     City newCity = new City();
+                    newCity.setCityID(cityId);
                     newCity.setCityName(cityName);
 
                     cities.add(newCity);
@@ -66,16 +68,6 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         City city = new City();
         city.setCityName(cityName);
         return city;
-    }
-
-    private List<City> GetCities() {
-        List<City> cities = new ArrayList<City>();
-
-        cities.add(GetCityByCityName("Toronto"));
-        cities.add(GetCityByCityName("Waterloo"));
-        cities.add(GetCityByCityName("Bobcaygeon"));
-
-        return cities;
     }
 
     @Override
@@ -100,9 +92,9 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         UserCityService userCityService = new UserCityService(linkUserCityDao, cityDao);
         // Get custom  cities for now.
         // Replace this with db call for logged in user to see if they have any cities.
-//        cities = GetCities();
         sharedPreferences = getSharedPreferences("UserUI", MODE_PRIVATE);
         String signedInUser = sharedPreferences.getString("userName", null);
+        setTitle(getString(R.string.app_name_with_arg, signedInUser));
         cities = userCityService.getCitiesForUser(signedInUser);
 
         ListView cityListView = findViewById(R.id.listCityView);

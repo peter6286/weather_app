@@ -1,3 +1,4 @@
 <resources>
+    <string name="app_name_with_arg">Team 19 - %s</string>
     <string name="app_name">Team 19</string>
 </resources>
