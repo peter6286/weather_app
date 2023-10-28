@@ -13,6 +13,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/** SignInActivity class that formulates the page a user lands on to sign in.
+    Methods will create the sign in page functionality and create the database used
+    to house sign in data. **/
 public class SignInActivity extends AppCompatActivity {
     private UserDao userDao;
     private CityDao cityDao;
@@ -23,6 +26,10 @@ public class SignInActivity extends AppCompatActivity {
     private Button eSignInButton;
     private Button eSignUpButton;
     private UIManager uiManager;
+    /** onCreate method that will formualate the page to allow users
+    to sign in
+    @param savedInstanceState current saved state data
+    **/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         createDb();
@@ -74,6 +81,8 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 
+    /** createDb method that will create the database used for sign in activity
+    **/
     public void createDb() {
         Context context = this;
         db = Room.databaseBuilder(context, UserCityDatabase.class, "database").allowMainThreadQueries().build();
