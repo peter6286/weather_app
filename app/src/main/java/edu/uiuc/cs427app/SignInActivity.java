@@ -49,7 +49,7 @@ public class SignInActivity extends AppCompatActivity {
                         sharedPreferences.edit().putBoolean("signed_in", true).apply();
                         sharedPreferences.edit().putString("username", inputUsername).apply();
                         Toast.makeText(SignInActivity.this, "Signed in successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                        Intent intent = new Intent(SignInActivity.this, AddCityActivity.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(SignInActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();

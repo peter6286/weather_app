@@ -18,7 +18,7 @@ public class UserCityService {
     }
 
     // 2. Add a city to a user's list
-    public List<City> addCityForUser(String userName, String cityName, String stateOrRegion, String countryName) {
+    public City addCityForUser(String userName, String cityName, String stateOrRegion, String countryName) {
         // 1. Check if the city exists in the database
         List<City> matchingCities = cityDao.findCitiesByName(cityName, stateOrRegion, countryName);
 
@@ -46,10 +46,16 @@ public class UserCityService {
         link.setCityID(cityToAdd.getCityID());
 
         // 4. Call linkUserCityDao.insert() to link user with the city
-        linkUserCityDao.insert(link);
+        try {
+            linkUserCityDao.insert(link);
+        }
+        catch (Exception e) {
+            // Dup entry.
+            return null;
+        }
 
         // 5. Return the updated list of cities for the user
-        return getCitiesForUser(userName);
+        return cityToAdd;
     }
 
 
@@ -62,6 +68,4 @@ public class UserCityService {
         }
         return getCitiesForUser(userName);  // Return the updated list of cities for that user
     }
-
-
 }

@@ -1,6 +1,7 @@
 package edu.uiuc.cs427app;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,15 +11,24 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.room.Room;
 
 import java.util.List;
 
 public class CityListAdapter extends ArrayAdapter<City> {
     private LayoutInflater inflater;
+    private UserCityDatabase db;
+    private LinkUserCityDao linkUserCityDao;
+    private SharedPreferences sharedPreferences;
+    private CityDao cityDao;
+    private UserCityService userCityService;
+    private String signedInUser;
 
-    public CityListAdapter(Context context, List<City> citiesList) {
+    public CityListAdapter(Context context, List<City> citiesList, UserCityService userCityService, String signedInUser) {
         super(context, 0, citiesList);
         inflater = LayoutInflater.from(context);
+        this.userCityService = userCityService;
+        this.signedInUser = signedInUser;
     }
 
     @NonNull
@@ -42,8 +52,11 @@ public class CityListAdapter extends ArrayAdapter<City> {
             removeButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    // Remove from DB.
+                    userCityService.removeCityForUser(signedInUser, city.getCityID());
+
                     remove(city);
-                    // Call to DB to remove the city for the user here.
+
                     notifyDataSetChanged();
                 }
             });
