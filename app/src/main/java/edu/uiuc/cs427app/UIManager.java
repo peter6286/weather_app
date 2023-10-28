@@ -18,6 +18,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+/** UIManager class is used to house the methods used to make changes on the UI.
+**/
 public class UIManager {
     public SharedPreferences preferences;
     public ViewGroup currentLayout;
@@ -29,12 +31,14 @@ public class UIManager {
         editor.apply();
     }
 
-    // Method to get the saved theme preference
+    /** getThemePreference method to get the saved theme preference **/
     public boolean getThemePreference() {
         //SharedPreferences preferences = getSharedPreferences("UserUI", MODE_PRIVATE);
         return preferences.getBoolean("isDefaultTheme", false);
     }
 
+    /** setButtonPreference method to set the button preference 
+        @param    isRounded    is button preference to be rounded **/
     public void setButtonPreference(boolean isRounded) {
         //SharedPreferences preferences = getSharedPreferences("UserUI", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
@@ -43,22 +47,29 @@ public class UIManager {
     }
 
 
-    // Method to get the saved theme preference
+    /** getButtonPreference method to get button preference **/
     public boolean getButtonPreference() {
         //SharedPreferences preferences = getSharedPreferences("UserUI", MODE_PRIVATE);
         return preferences.getBoolean("isRounded", false);
     }
 
-
+    /** setTextSizePreference method to set text size preference 
+        @param    isTextLarge    is text large preference enabled **/
     public void setTextSizePreference(boolean isTextLarge){
         SharedPreferences.Editor editor = preferences.edit();
         editor.putBoolean("isTextLarge", isTextLarge);
         editor.apply();
     }
+    
+    /** getTextSizePreference method to get text size preference **/
     public boolean getTextSizePreference() {
         return preferences.getBoolean("isTextLarge", false);
     }
 
+    /** setSwitchTextSize method to set switch text size 
+        @param    currentSwitch   current switch
+        @param    isTextLarge     is current text large user preference 
+    **/
     private void setSwitchTextSize(Switch currentSwitch, boolean isTextLarge) {
         if (isTextLarge) {
             currentSwitch.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
@@ -67,6 +78,10 @@ public class UIManager {
         }
     }
 
+    /** setEditTextSize method to set edit text size 
+        @param    editText        edit text
+        @param    isTextLarge     is current text large user preference 
+    **/
     private void setEditTextSize(EditText editText, boolean isTextLarge) {
         if (isTextLarge) {
             editText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
@@ -75,6 +90,10 @@ public class UIManager {
         }
     }
 
+    /** setTextViewSize method to set text view size 
+        @param    textView        text view
+        @param    isTextLarge     is current text large user preference 
+    **/
     public void setTextViewSize(TextView textView, boolean isTextLarge) {
         if (isTextLarge) {
             textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
@@ -83,6 +102,10 @@ public class UIManager {
         }
     }
 
+    /** setButtonStyle method to set text view size 
+        @param    button           button
+        @param    isRounded        is rounded button user preference 
+    **/
     public void setButtonStyle(Button button, boolean isRounded) {
         if (isRounded) {
             button.setBackgroundResource(R.drawable.round_button);
@@ -91,8 +114,9 @@ public class UIManager {
         }
     }
 
-    // Function to recursively change all ui elements (Button, EditText, TextView, Switch) and their children
-    // Ignore Space element
+    /** setButtonStyle method to set text view size 
+        @param    currentGroup group of UI componenets to modify
+    **/
     public void changeStyleRecursive(ViewGroup currentGroup) {
         Boolean isRounded = getButtonPreference();
         Boolean isTextLarge = getTextSizePreference();
