@@ -15,6 +15,19 @@ import androidx.room.Room;
 
 import java.util.List;
 
+/**
+ * Represents a link between users and cities in the database.
+ *
+ * This entity class is used to establish a many-to-many relationship between User and City entities
+ * by maintaining a mapping of usernames and city IDs.
+ *
+ * @author Anirudh Prasad
+ * @version 10/27/2023
+ */
+
+/**
+ * ArrayAdapter for displaying a list of cities with functionalities to remove a city and show details about it.
+ */
 public class CityListAdapter extends ArrayAdapter<City> {
     private LayoutInflater inflater;
     private UserCityDatabase db;
