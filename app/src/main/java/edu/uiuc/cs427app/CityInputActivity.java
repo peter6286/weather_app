@@ -23,7 +23,9 @@ public class CityInputActivity extends AppCompatActivity {
     private CityDao cityDao;
     private UIManager uiManager;
 
-    /** on create method to set up the city input page**/
+    /** on create method to set up the city input page
+        @param    savedInstanceState    user saved instance data
+    **/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         createDb();
