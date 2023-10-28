@@ -7,11 +7,15 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-/** Class that shows the users details in the display.
+/** DetailsActivity Class that shows the users details in the display.
     Methods in this class will retrieve all the
     information needed to create the details page.**/
 public class DetailsActivity extends AppCompatActivity implements View.OnClickListener{
 
+    /** 
+    onCreate method will create the functionality of the UI that 
+    displays UI functionality for user details
+    **/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +39,10 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
+    /** 
+    onCreate method will create the functionality of the UI that 
+    displays UI functionality for user details
+    **/
     @Override
     public void onClick(View view) {
         //Implement this (create an Intent that goes to a new Activity, which shows the map)
