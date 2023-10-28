@@ -2,6 +2,7 @@ package edu.uiuc.cs427app;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,9 +13,13 @@ import androidx.navigation.ui.AppBarConfiguration;
 
 import edu.uiuc.cs427app.databinding.ActivityMainBinding;
 
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button eSignOutButton;
@@ -43,6 +48,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button buttonChicago = findViewById(R.id.buttonChicago);
         Button buttonLA = findViewById(R.id.buttonLA);
         Button buttonNew = findViewById(R.id.buttonAddLocation);
+        Spinner dropdown = findViewById(R.id.spinner);
+        String[] items = new String[]{"white","orange", "red"};
+        String[] colorCode = new String[]{"#FFFFFF","#FF5733","#FF0000"};
+        View layout = findViewById(android.R.id.content);
 
         buttonChampaign.setOnClickListener(this);
         buttonChicago.setOnClickListener(this);
@@ -59,6 +68,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(MainActivity.this, "Signed out successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, SignInActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        // checks if value in dropdown has changed and if changed then changes the background of the page
+        dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // Get the selected item
+                String selectedItem = parent.getItemAtPosition(position).toString();
+                System.out.println(selectedItem);
+                int idx= Arrays.asList(items).indexOf(selectedItem);
+                layout.setBackgroundColor(Color.parseColor(colorCode[idx]));
+
+                // Call your function here
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // Handle case where nothing is selected
             }
         });
 
