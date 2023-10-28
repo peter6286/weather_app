@@ -21,6 +21,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a link between users and cities in the database.
+ *
+ * This entity class is used to establish a many-to-many relationship between User and City entities
+ * by maintaining a mapping of usernames and city IDs.
+ *
+ * @author Anirudh Prasad, Quan Nguyen
+ * @version 10/27/2023
+ */
+
 public class HomePageActivity extends AppCompatActivity implements View.OnClickListener {
     private RecyclerView recyclerView;
     private List<City> cities;
