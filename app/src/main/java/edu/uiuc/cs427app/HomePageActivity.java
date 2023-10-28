@@ -64,12 +64,14 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
             }
     );
 
+    /** get city by city name string **/
     private City GetCityByCityName(String cityName) {
         City city = new City();
         city.setCityName(cityName);
         return city;
     }
 
+    /** home page setup method to setup UI and backend **/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         createDb();
@@ -112,6 +114,7 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         });
 
         eSignOutButton.setOnClickListener(new View.OnClickListener() {
+            /** onclick function for sign out button **/
             @Override
             public void onClick(View v) {
                 uiManager.preferences.edit().putBoolean("signedIn", false).apply();
@@ -125,11 +128,13 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         });
     }
 
+    
     @Override
     public void onClick(View view) {
 
     }
 
+    /** create database for home page **/
     public void createDb() {
         Context context = this;
         db = Room.databaseBuilder(context, UserCityDatabase.class, "database").allowMainThreadQueries().build();
