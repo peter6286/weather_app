@@ -15,6 +15,10 @@ import androidx.room.PrimaryKey;
  * @author Sherry Li
  * @version 10/19/2023
  */
+
+// Define an entity for the "LinkUsersCities" table.
+// This table will have a composite primary key consisting of "userName" and "cityID".
+// It also establishes foreign key relationships to the User and City entities.
 @Entity(tableName = "LinkUsersCities", primaryKeys = {"userName", "cityID"}, foreignKeys = {
         @ForeignKey(entity = User.class, parentColumns = "userName", childColumns = "userName", onDelete = ForeignKey.CASCADE),
         @ForeignKey(entity = City.class, parentColumns = "cityID", childColumns = "cityID", onDelete = ForeignKey.CASCADE)

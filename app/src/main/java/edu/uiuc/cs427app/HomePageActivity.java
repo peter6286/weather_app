@@ -21,6 +21,17 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents the main home page of the app, displaying a list of cities associated with the currently signed-in user.
+ *
+ * This activity provides functionalities for users to view a list of cities, add new cities, and manage their
+ * settings. It offers dynamic theme switching and UI adjustments, based on user preferences. Users can also sign out
+ * from this page and navigate back to the sign-in page.
+ *
+ * @author Anirudh Prasad, Quan Nguyen
+ * @version 10/27/2023
+ */
+
 public class HomePageActivity extends AppCompatActivity implements View.OnClickListener {
     private RecyclerView recyclerView;
     private List<City> cities;
