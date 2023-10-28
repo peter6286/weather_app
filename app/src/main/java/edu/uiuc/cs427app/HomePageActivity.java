@@ -44,8 +44,8 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
     private SharedPreferences sharedPreferences;
     private CityDao cityDao;
 
-    // ActivityResultLauncher that updates the list when a new city is added.
-    // This processes an event sent from CityInputActivity.
+    /** ActivityResultLauncher that updates the list when a new city is added.
+        This processes an event sent from CityInputActivity. **/
     private ActivityResultLauncher<Intent> cityInputLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
