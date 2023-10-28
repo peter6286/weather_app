@@ -19,6 +19,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+/** SignUpActivity class that formulates the page a user lands on to sign up.
+     Methods in this class will create the sign up page as well as make changes
+     to the customized UI depending on user input and create the database 
+     to handle sign up activity. 
+**/
 public class SignUpActivity extends AppCompatActivity {
     private UserDao userDao;
     private CityDao cityDao;
@@ -94,6 +99,9 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
+    /** onPostCreate will dictate the UI layout as set by the user on the sign up page
+    @param    savedInstanceState    user saved instance data
+    **/
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
     super.onPostCreate(savedInstanceState);
@@ -125,6 +133,8 @@ public class SignUpActivity extends AppCompatActivity {
         });
     }
 
+    /** createDb will create the database used for sign up activity
+    **/
     public void createDb() {
         Context context = this;
         db = Room.databaseBuilder(context, UserCityDatabase.class, "database").allowMainThreadQueries().build();
