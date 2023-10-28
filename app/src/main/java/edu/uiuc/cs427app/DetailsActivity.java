@@ -7,6 +7,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/** Class that shows the users details in the display.
+    Methods in this class will retrieve all the
+    information needed to create the details page.**/
 public class DetailsActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
