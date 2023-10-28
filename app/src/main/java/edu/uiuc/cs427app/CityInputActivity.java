@@ -19,6 +19,7 @@ public class CityInputActivity extends AppCompatActivity {
     private CityDao cityDao;
     private UIManager uiManager;
 
+    /** on create method to set up the city input page**/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         createDb();
@@ -76,7 +77,7 @@ public class CityInputActivity extends AppCompatActivity {
         });
     }
 
-
+    /** create database for the city input page **/
     public void createDb() {
         Context context = this;
         db = Room.databaseBuilder(context, UserCityDatabase.class, "database").allowMainThreadQueries().build();
