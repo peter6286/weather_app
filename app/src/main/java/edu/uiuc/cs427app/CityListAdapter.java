@@ -37,6 +37,14 @@ public class CityListAdapter extends ArrayAdapter<City> {
     private UserCityService userCityService;
     private String signedInUser;
 
+    /**
+     * Constructor for the CityListAdapter.
+     *
+     * @param context         Context of the app.
+     * @param citiesList      List of cities to be displayed.
+     * @param userCityService Service for User-City operations.
+     * @param signedInUser    The currently signed-in user.
+     */
     public CityListAdapter(Context context, List<City> citiesList, UserCityService userCityService, String signedInUser) {
         super(context, 0, citiesList);
         inflater = LayoutInflater.from(context);
@@ -44,6 +52,14 @@ public class CityListAdapter extends ArrayAdapter<City> {
         this.signedInUser = signedInUser;
     }
 
+    /**
+     * Get the view for a city item in the list.
+     *
+     * @param position    Position of the city in the list.
+     * @param convertView Reusable view (if available).
+     * @param parent      Parent view to which this item view will be added.
+     * @return The view for the city item.
+     */
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
