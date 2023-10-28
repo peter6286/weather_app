@@ -42,6 +42,13 @@ public class CityListAdapter extends ArrayAdapter<City> {
 
     private UIManager uiManager;
 
+    /** CityListAdapter constructor 
+        @param    context       current context
+        @param    citiesList    cities list
+        @param    userCityService    user city service
+        @param    signedInUser    signed in user
+        @param    uiManager        ui manager
+    **/
     public CityListAdapter(Context context, List<City> citiesList, UserCityService userCityService, String signedInUser, UIManager uiManager) {
         super(context, 0, citiesList);
         inflater = LayoutInflater.from(context);
