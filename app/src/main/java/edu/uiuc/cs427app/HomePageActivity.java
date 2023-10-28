@@ -22,10 +22,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Represents a link between users and cities in the database.
+ * Represents the main home page of the app, displaying a list of cities associated with the currently signed-in user.
  *
- * This entity class is used to establish a many-to-many relationship between User and City entities
- * by maintaining a mapping of usernames and city IDs.
+ * This activity provides functionalities for users to view a list of cities, add new cities, and manage their
+ * settings. It offers dynamic theme switching and UI adjustments, based on user preferences. Users can also sign out
+ * from this page and navigate back to the sign-in page.
  *
  * @author Anirudh Prasad, Quan Nguyen
  * @version 10/27/2023
