@@ -153,7 +153,11 @@ public class ProfileManager {
 
 
 
-    /** Encrypts/Hashes the password to store in the database for added security **/
+    /** Encrypts/Hashes the password to store in the database for added security 
+        @param    password     password to be encrypted
+        @param    secretKey    secret key to encrypt with
+        return    encrypted password string
+    **/
     public static String encryptPassword(String password, SecretKey secretKey) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, InvalidKeyException {
         Cipher cipher = Cipher.getInstance("AES");
         cipher.init(Cipher.ENCRYPT_MODE, secretKey);
@@ -170,7 +174,11 @@ public class ProfileManager {
         return hexString.toString();
     }
 
-    /** Decrypts the hashed password to get the original passwords **/
+    /** Decrypts the hashed password to get the original passwords 
+        @param    encryptedPassword     encrypted password to decrypt
+        @param    secretKey             secret key to decrypt with
+        return    decrypted password string
+    **/
     public static String decryptPassword(String encryptedPassword, SecretKey secretKey) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
         byte[] encryptedBytes = new byte[encryptedPassword.length() / 2];
         for (int i = 0; i < encryptedBytes.length; i++) {
