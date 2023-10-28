@@ -11,6 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/** Class that allows users to input a city to view.
+    Methods included in this class will construct the 
+    city input page as well as set up the database.
+**/
 public class CityInputActivity extends AppCompatActivity {
 
     private UserCityDatabase db;
