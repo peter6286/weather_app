@@ -51,9 +51,8 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         uiManager.currentLayout =  findViewById(R.id.signUpRoot);
+        uiManager.changeStyleRecursive(uiManager.currentLayout);
 
-
-        uiManager.changeElementsStyle();
         eUsername = findViewById(R.id.signUpUsername);
         ePassword = findViewById(R.id.signUpPassword);
         ePasswordConfirm = findViewById(R.id.signUpPasswordConfirm);

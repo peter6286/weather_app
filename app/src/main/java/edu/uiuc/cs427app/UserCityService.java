@@ -1,5 +1,7 @@
 package edu.uiuc.cs427app;
 
+import android.util.Log;
+
 import java.util.List;
 
 public class UserCityService {
@@ -21,7 +23,7 @@ public class UserCityService {
     public City addCityForUser(String userName, String cityName, String stateOrRegion, String countryName) {
         // 1. Check if the city exists in the database
         List<City> matchingCities = cityDao.findCitiesByName(cityName, stateOrRegion, countryName);
-
+        Log.d("DEBUG", "city count" + matchingCities.stream().count());
         City cityToAdd;
 
         // 2. If the city does not exist, insert it
@@ -51,6 +53,7 @@ public class UserCityService {
         }
         catch (Exception e) {
             // Dup entry.
+            Log.d("DEBUG", "error" + e.toString());
             return null;
         }
 

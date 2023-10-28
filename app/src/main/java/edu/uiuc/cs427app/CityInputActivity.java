@@ -17,17 +17,28 @@ public class CityInputActivity extends AppCompatActivity {
     private LinkUserCityDao linkUserCityDao;
     private SharedPreferences sharedPreferences;
     private CityDao cityDao;
+    private UIManager uiManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         createDb();
         UserCityService userCityService = new UserCityService(linkUserCityDao, cityDao);
-
-        sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE);
-        String signedInUser = sharedPreferences.getString("username", null);
-
+        uiManager = new UIManager();
+        sharedPreferences = getSharedPreferences("UserUI", MODE_PRIVATE);
+        String signedInUser = sharedPreferences.getString("userName", null);
+        uiManager.preferences = sharedPreferences;
+        boolean isDefaultTheme = uiManager.getThemePreference();
+        // Set the theme based on the preference
+        if (isDefaultTheme) {
+            setTheme(R.style.Theme_NonDefault);
+        } else {
+            setTheme(R.style.Theme_Default);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city_input);
+
+        uiManager.currentLayout =  findViewById(R.id.cityInputRoot);
+        uiManager.changeStyleRecursive(uiManager.currentLayout);
 
         Button addCityTextBoxButton = findViewById(R.id.buttonAddCityTextBox);
         EditText cityTextBox = findViewById(R.id.addCityTextBox);

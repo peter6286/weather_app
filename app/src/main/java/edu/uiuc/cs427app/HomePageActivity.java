@@ -95,20 +95,21 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_home_page);
         eSignOutButton = findViewById(R.id.signOutButton);
         uiManager.currentLayout =  findViewById(R.id.homePageRoot);
-        uiManager.changeElementsStyle();
+        //uiManager.changeStyleRecursive(uiManager.currentLayout);
 
         UserCityService userCityService = new UserCityService(linkUserCityDao, cityDao);
         // Get custom  cities for now.
         // Replace this with db call for logged in user to see if they have any cities.
 //        cities = GetCities();
-        sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE);
-        String signedInUser = sharedPreferences.getString("username", null);
+        sharedPreferences = getSharedPreferences("UserUI", MODE_PRIVATE);
+        String signedInUser = sharedPreferences.getString("userName", null);
         cities = userCityService.getCitiesForUser(signedInUser);
 
         ListView cityListView = findViewById(R.id.listCityView);
         Button addCityButton = findViewById(R.id.addCityButton);
-        customAdapter = new CityListAdapter(this, cities, userCityService, signedInUser);
+        customAdapter = new CityListAdapter(this, cities, userCityService, signedInUser, uiManager);
         cityListView.setAdapter(customAdapter);
+        uiManager.changeStyleRecursive(uiManager.currentLayout);
 
         // On click listener for the "Add City" button
         // This triggers the CityInputActivity from which a user can type in a city

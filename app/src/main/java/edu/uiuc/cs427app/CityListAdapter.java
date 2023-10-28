@@ -2,6 +2,7 @@ package edu.uiuc.cs427app;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.provider.Contacts;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,19 +40,14 @@ public class CityListAdapter extends ArrayAdapter<City> {
     private UserCityService userCityService;
     private String signedInUser;
 
-    /**
-     * Constructor for the CityListAdapter.
-     *
-     * @param context         Context of the app.
-     * @param citiesList      List of cities to be displayed.
-     * @param userCityService Service for User-City operations.
-     * @param signedInUser    The currently signed-in user.
-     */
-    public CityListAdapter(Context context, List<City> citiesList, UserCityService userCityService, String signedInUser) {
+    private UIManager uiManager;
+
+    public CityListAdapter(Context context, List<City> citiesList, UserCityService userCityService, String signedInUser, UIManager uiManager) {
         super(context, 0, citiesList);
         inflater = LayoutInflater.from(context);
         this.userCityService = userCityService;
         this.signedInUser = signedInUser;
+        this.uiManager = uiManager;
     }
 
     /**
@@ -72,8 +68,11 @@ public class CityListAdapter extends ArrayAdapter<City> {
         }
 
         TextView cityNameView = view.findViewById(R.id.customCityName);
+        uiManager.setTextViewSize(cityNameView, uiManager.getTextSizePreference());
         Button removeButton = view.findViewById(R.id.customRemoveCityButton);
+        uiManager.setButtonStyle(removeButton, uiManager.getButtonPreference());
         Button showDetailsButton = view.findViewById(R.id.customCityShowDetailsButton);
+        uiManager.setButtonStyle(showDetailsButton, uiManager.getButtonPreference());
 
         City city = getItem(position);
 
