@@ -22,6 +22,7 @@ public class City {
 
     public City() {}
 
+    /** alternative constructor for creating a city **/
     public City(String cityName, String stateOrRegionName, String countryName, double latitude, double longitude) {
         this.cityName = cityName;
         this.stateOrRegionName = stateOrRegionName;
