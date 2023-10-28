@@ -37,51 +37,62 @@ public class City {
         this.longitude = longitude;
     }
 
-    // Getter and Setter methods
+    /** get city ID**/
     public int getCityID() {
         return cityID;
     }
 
+    /** set city ID **/
     public void setCityID(int cityID) {
         this.cityID = cityID;
     }
 
+    /** get City Name**/
     public String getCityName() {
         return cityName;
     }
 
+    /** set City Name **/
     public void setCityName(String cityName) {
         this.cityName = cityName;
     }
 
+    /** get state or region name **/
     public String getStateOrRegionName() {
         return stateOrRegionName;
     }
 
+    /** set state or region **/
     public void setStateOrRegionName(String stateOrRegionName) {
         this.stateOrRegionName = stateOrRegionName;
     }
 
+    /** get country name **/
     public String getCountryName() {
         return countryName;
     }
 
+    /** set country name **/
     public void setCountryName(String countryName) {
         this.countryName = countryName;
     }
 
+    /** get latitude **/
     public double getLatitude() {
         return latitude;
     }
 
+    /** set latitude **/
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
+    /** get longitude **/
     public double getLongitude() {
         return longitude;
     }
 
+    /** set longitude **/
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
