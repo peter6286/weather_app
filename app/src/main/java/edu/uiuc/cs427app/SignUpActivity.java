@@ -39,6 +39,9 @@ public class SignUpActivity extends AppCompatActivity {
     private UIManager uiManager;
 
     List<Button> allButtons = new ArrayList<>();
+     /** onCreate method for sign up activity 
+          @param     savedInstanceState     saved user instance
+     **/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         createDb();
