@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +22,7 @@ public class SignInActivity extends AppCompatActivity {
     private EditText ePassword;
     private Button eSignInButton;
     private Button eSignUpButton;
+    private UIManager uiManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         createDb();
@@ -30,6 +32,9 @@ public class SignInActivity extends AppCompatActivity {
         ePassword = findViewById(R.id.signInPassword);
         eSignInButton = findViewById(R.id.signInButton);
         eSignUpButton = findViewById(R.id.signUpButton);
+        uiManager = new UIManager();
+        uiManager.preferences = getSharedPreferences("UserUI", MODE_PRIVATE);
+        Log.d("DEBUG", "UI" + uiManager.toString());
 
         eSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,11 +50,13 @@ public class SignInActivity extends AppCompatActivity {
                     PM.userDao = userDao;
                     ProfileManager.SignInResult out = PM.signIn(inputUsername, inputPassword);
                     if (out.isSuccess()) {
-                        SharedPreferences sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE);
-                        sharedPreferences.edit().putBoolean("signed_in", true).apply();
-                        sharedPreferences.edit().putString("username", inputUsername).apply();
+                        uiManager.preferences.edit().putBoolean("signedIn", true).apply();
+                        uiManager.preferences.edit().putString("userName", inputUsername).apply();
+                        uiManager.setThemePreference(out.getCheck_user().getDefaultTheme());
+                        uiManager.setButtonPreference(out.getCheck_user().getIsRounded());
+                        uiManager.setTextSizePreference(out.getCheck_user().getIsLargeText());
                         Toast.makeText(SignInActivity.this, "Signed in successfully", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(SignInActivity.this, AddCityActivity.class);
+                        Intent intent = new Intent(SignInActivity.this, HomePageActivity.class);
                         startActivity(intent);
                     } else {
                         Toast.makeText(SignInActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();

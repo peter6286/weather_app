@@ -16,14 +16,17 @@ import androidx.room.Room;
 
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddCityActivity extends AppCompatActivity implements View.OnClickListener {
+public class HomePageActivity extends AppCompatActivity implements View.OnClickListener {
     private RecyclerView recyclerView;
     private List<City> cities;
     private CityListAdapter customAdapter;
+    private Button eSignOutButton;
+    private UIManager uiManager;
 
     private UserCityDatabase db;
     private LinkUserCityDao linkUserCityDao;
@@ -68,7 +71,20 @@ public class AddCityActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         createDb();
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_city);
+        uiManager = new UIManager();
+        // Get theme selection
+        uiManager.preferences = getSharedPreferences("UserUI", MODE_PRIVATE);
+        boolean isDefaultTheme = uiManager.getThemePreference();
+        // Set the theme based on the preference
+        if (isDefaultTheme) {
+            setTheme(R.style.Theme_NonDefault);
+        } else {
+            setTheme(R.style.Theme_Default);
+        }
+        setContentView(R.layout.activity_home_page);
+        eSignOutButton = findViewById(R.id.signOutButton);
+        uiManager.currentLayout =  findViewById(R.id.homePageRoot);
+        uiManager.changeElementsStyle();
 
         UserCityService userCityService = new UserCityService(linkUserCityDao, cityDao);
         // Get custom  cities for now.
@@ -87,8 +103,21 @@ public class AddCityActivity extends AppCompatActivity implements View.OnClickLi
         // This triggers the CityInputActivity from which a user can type in a city
         // and add it to the list.
         addCityButton.setOnClickListener(view -> {
-            Intent intent = new Intent(AddCityActivity.this, CityInputActivity.class);
+            Intent intent = new Intent(HomePageActivity.this, CityInputActivity.class);
             cityInputLauncher.launch(intent);
+        });
+
+        eSignOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                uiManager.preferences.edit().putBoolean("signedIn", false).apply();
+                uiManager.setThemePreference(false);
+                uiManager.setButtonPreference(false);
+                uiManager.setTextSizePreference(false);
+                Toast.makeText(HomePageActivity.this, "Signed out successfully", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(HomePageActivity.this, SignInActivity.class);
+                startActivity(intent);
+            }
         });
     }
 

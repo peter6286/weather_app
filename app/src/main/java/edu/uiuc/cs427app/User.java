@@ -26,23 +26,20 @@ public class User {
     private String lastName;
     private String password;
 
-    private String colorTheme;
-    private String roundOrSquareButton;
-    private String fontSize;
+    private Boolean isDefaultTheme;
+    private Boolean isRounded;
+    private Boolean isLargeText;
 
-    public User(String userName, String email, String firstName, String lastName, String password, String colorTheme, String roundOrSquareButton, String fontSize) {
+    public User() {
         this.userName = userName;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
         this.password = password;
-        this.colorTheme = colorTheme;
-        this.roundOrSquareButton = roundOrSquareButton;
-        this.fontSize = fontSize;
+//        this.isDefaultTheme = isDefaultTheme;
+//        this.isRounded = isRounded;
+//        this.isLargeText = isLargeText;
     }
 
     @Ignore
-    public User(@NonNull String userName, String password) {
+    public User(@NonNull String userName, String password ) {
         this.userName = userName;
         this.password = password;
     }
@@ -89,24 +86,24 @@ public class User {
         this.password = password;
     }
 
-    public String getColorTheme() {
-        return colorTheme;
+    public Boolean getDefaultTheme() {
+        return isDefaultTheme;
     }
-    public void setColorTheme(String colorTheme) {
-        this.colorTheme = colorTheme;
+    public void setDefaultTheme(Boolean isDefault) {
+        this.isDefaultTheme = isDefault;
     }
-    public String getRoundOrSquareButton() {
-        return roundOrSquareButton;
+    public Boolean getIsRounded() {
+        return isRounded;
     }
-    public void setRoundOrSquareButton(String roundOrSquareButton) {
-        this.roundOrSquareButton = roundOrSquareButton;
+    public void setIsRounded(Boolean isRounded) {
+        this.isRounded = isRounded;
     }
 
-    public String getFontSize() {
-        return fontSize;
+    public Boolean getIsLargeText() {
+        return isLargeText;
     }
-    public void setFontSize(String fontSize) {
-        this.fontSize = fontSize;
+    public void setIsLargeText(Boolean isLarge) {
+        this.isLargeText = isLarge;
     }
 
 }

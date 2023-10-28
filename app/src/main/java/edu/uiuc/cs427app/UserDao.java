@@ -40,4 +40,16 @@ public interface UserDao {
      */
     @Query("SELECT COUNT(*) FROM Users WHERE userName = :userName")
     boolean checkUserExistence(String userName);
+
+    /**
+     * Save user UI preferences to the database.
+     *
+     * @param userName The name of the user to search for.
+     * @param userName The name of the user to search for.
+     * @param userName The name of the user to search for.
+     * @param userName The name of the user to search for.
+     * @return The number of users with the specified username.
+     */
+    @Query("UPDATE Users SET isDefaultTheme=:isDefault, isRounded=:isRounded, isLargeText=:isLargeText WHERE userName = :userName")
+    Integer saveUserUI(String userName, Boolean isDefault, Boolean isRounded, Boolean isLargeText);
 }

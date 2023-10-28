@@ -68,7 +68,7 @@ public class ProfileManager {
     }
 
     // Sign-up method
-    public SignUpResult signUp(String username, String password) {
+    public SignUpResult signUp(String username, String password, Boolean isDefaultTheme, Boolean isRounded, Boolean isLargeText) {
         try {
             // Check if the username already exists
             if (userDao.checkUserExistence(username)) {
@@ -77,7 +77,6 @@ public class ProfileManager {
                 return new SignUpResult(false, "Username already exists.", foundUser);
             }
 
-            // Create new user and insert into DB
 
             String encrypted_password=null;
             try {
@@ -93,7 +92,13 @@ public class ProfileManager {
             } catch (IllegalBlockSizeException e) {
                 throw new RuntimeException(e);
             }
+            
+            // Create user and add to db
             User newUser = new User(username,encrypted_password.toString());
+            newUser.setDefaultTheme(isDefaultTheme);
+            newUser.setIsRounded(isRounded);
+            newUser.setIsLargeText(isLargeText);
+
             userDao.insert(newUser);
 
             return new SignUpResult(true, "Successfully signed up.", newUser);
