@@ -64,7 +64,10 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
             }
     );
 
-    /** get city by city name string **/
+    /** get city by city name string 
+        @param    cityName    city name 
+        return    City
+    **/
     private City GetCityByCityName(String cityName) {
         City city = new City();
         city.setCityName(cityName);
@@ -128,7 +131,7 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         });
     }
 
-    
+    /** on click method **/
     @Override
     public void onClick(View view) {
 
