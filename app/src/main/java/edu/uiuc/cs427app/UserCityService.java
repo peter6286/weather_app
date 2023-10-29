@@ -12,6 +12,9 @@ public class UserCityService {
     private final LinkUserCityDao linkUserCityDao;
     private final CityDao cityDao;  // Assuming there's a CityDao interface for handling City CRUD operations
 
+    /** This is a constructor for the UserCityService class. It takes two dependencies as input: a LinkUserCityDao and a CityDao. These dependencies will be used to access and update the user-city link and city tables in the database.
+
+     The constructor initializes the linkUserCityDao and cityDao fields to the values passed in as parameters. These fields will be used by the service to perform operations on the user-city link and city tables. **/
     public UserCityService(LinkUserCityDao linkUserCityDao, CityDao cityDao) {
         this.linkUserCityDao = linkUserCityDao;
         this.cityDao = cityDao;

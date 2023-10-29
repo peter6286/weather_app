@@ -69,7 +69,11 @@ public class SignUpActivity extends AppCompatActivity {
         eTextSizeSwitch = findViewById(R.id.textSizeSwitch);
         eSignUpButton = findViewById(R.id.completeSignUp);
 
+        /** The eSignUpButton.setOnClickListener() code is responsible for handling the click event on the sign-up button. The View.OnClickListener interface is implemented to provide a callback method that is invoked when the button is clicked.
+         **/
         eSignUpButton.setOnClickListener(new View.OnClickListener() {
+
+            /** The onClick() method first checks if the username, password, and password confirmation fields are all empty. If any of the fields are empty, a toast message is displayed to the user. **/
             @Override
             public void onClick(View v) {
                 String inputUsername = eUsername.getText().toString();
@@ -106,6 +110,8 @@ public class SignUpActivity extends AppCompatActivity {
     /** onPostCreate will dictate the UI layout as set by the user on the sign up page
     @param    savedInstanceState    user saved instance data
     **/
+
+    /** The eDefaultThemeSwitch.setOnCheckedChangeListener(), eButtonStyleSwitch.setOnCheckedChangeListener(), and eTextSizeSwitch.setOnCheckedChangeListener() functions are responsible for handling the checked change event on the theme, button style, and text size switches, respectively. The CompoundButton.OnCheckedChangeListener interface is implemented to provide a callback method that is invoked when the switch is checked or unchecked**/
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
     super.onPostCreate(savedInstanceState);

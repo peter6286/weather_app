@@ -189,8 +189,10 @@ public class ProfileManager {
 
         Cipher cipher = Cipher.getInstance("AES");
         cipher.init(Cipher.DECRYPT_MODE, secretKey);
-        byte[] decryptedBytes = cipher.doFinal(encryptedBytes);
-        Log.v("op",decryptedBytes.toString());
+        /** ine of code decrypts the encryptedBytes using the cipher object. The result of the decryption is stored in the decryptedBytes variable.
+         **/
+         byte[] decryptedBytes = cipher.doFinal(encryptedBytes);
+
         return new String(decryptedBytes);
     }
 }

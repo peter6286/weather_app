@@ -115,7 +115,8 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
             Intent intent = new Intent(HomePageActivity.this, CityInputActivity.class);
             cityInputLauncher.launch(intent);
         });
-
+        /**
+         The eSignOutButton.setOnClickListener() function is responsible for handling the click event on the "Sign out" button. The View.OnClickListener interface is implemented to provide a callback method that is invoked when the button is clicked. **/
         eSignOutButton.setOnClickListener(new View.OnClickListener() {
             /** onclick function for sign out button **/
             @Override
