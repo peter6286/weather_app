@@ -75,6 +75,7 @@ public class SignInActivity extends AppCompatActivity {
         eSignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                uiManager.resetStylePreference();
                 Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
                 startActivity(intent);
             }
