@@ -11,6 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/** Class that allows users to input a city to view.
+    Methods included in this class will construct the 
+    city input page as well as set up the database.
+**/
 public class CityInputActivity extends AppCompatActivity {
 
     private UserCityDatabase db;
@@ -19,6 +23,9 @@ public class CityInputActivity extends AppCompatActivity {
     private CityDao cityDao;
     private UIManager uiManager;
 
+    /** on create method to set up the city input page
+        @param    savedInstanceState    user saved instance data
+    **/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         createDb();
@@ -76,7 +83,7 @@ public class CityInputActivity extends AppCompatActivity {
         });
     }
 
-
+    /** create database for the city input page **/
     public void createDb() {
         Context context = this;
         db = Room.databaseBuilder(context, UserCityDatabase.class, "database").allowMainThreadQueries().build();

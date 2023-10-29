@@ -44,64 +44,83 @@ public class User {
         this.password = password;
     }
 
-    // Getter and Setter methods
+    // get username
     @NonNull
     public String getUserName() {
         return userName;
     }
 
+    // set username
     public void setUserName(@NonNull String userName) {
         this.userName = userName;
     }
 
+    // get email
     public String getEmail() {
         return email;
     }
 
+    //set email
     public void setEmail(String email) {
         this.email = email;
     }
 
+    //get first name
     public String getFirstName() {
         return firstName;
     }
 
+    // set first name
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    //get last name
     public String getLastName() {
         return lastName;
     }
 
+    //set last name
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    //get password
     public String getPassword() {
         return password;
     }
 
+    //set password
     public void setPassword(String password) {
         this.password = password;
     }
 
+    //get default time
     public Boolean getDefaultTheme() {
         return isDefaultTheme;
     }
+
+    //set default time
     public void setDefaultTheme(Boolean isDefault) {
         this.isDefaultTheme = isDefault;
     }
+
+    //get is rounded
     public Boolean getIsRounded() {
         return isRounded;
     }
+
+    //set is rounded
     public void setIsRounded(Boolean isRounded) {
         this.isRounded = isRounded;
     }
 
+    //get is large text
     public Boolean getIsLargeText() {
         return isLargeText;
     }
+
+    // set is large text
     public void setIsLargeText(Boolean isLarge) {
         this.isLargeText = isLarge;
     }

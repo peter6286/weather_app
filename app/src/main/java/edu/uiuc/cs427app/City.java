@@ -22,6 +22,13 @@ public class City {
 
     public City() {}
 
+    /** alternative constructor for creating a city 
+        @param    cityName           city name
+        @param    stateOrRegionName  state or region name
+        @param    countryName        country name
+        @param    latitude           city latitude
+        @param    longitude          city longitude
+    **/
     public City(String cityName, String stateOrRegionName, String countryName, double latitude, double longitude) {
         this.cityName = cityName;
         this.stateOrRegionName = stateOrRegionName;
@@ -30,51 +37,62 @@ public class City {
         this.longitude = longitude;
     }
 
-    // Getter and Setter methods
+    /** get city ID**/
     public int getCityID() {
         return cityID;
     }
 
+    /** set city ID **/
     public void setCityID(int cityID) {
         this.cityID = cityID;
     }
 
+    /** get City Name**/
     public String getCityName() {
         return cityName;
     }
 
+    /** set City Name **/
     public void setCityName(String cityName) {
         this.cityName = cityName;
     }
 
+    /** get state or region name **/
     public String getStateOrRegionName() {
         return stateOrRegionName;
     }
 
+    /** set state or region **/
     public void setStateOrRegionName(String stateOrRegionName) {
         this.stateOrRegionName = stateOrRegionName;
     }
 
+    /** get country name **/
     public String getCountryName() {
         return countryName;
     }
 
+    /** set country name **/
     public void setCountryName(String countryName) {
         this.countryName = countryName;
     }
 
+    /** get latitude **/
     public double getLatitude() {
         return latitude;
     }
 
+    /** set latitude **/
     public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
+    /** get longitude **/
     public double getLongitude() {
         return longitude;
     }
 
+    /** set longitude **/
     public void setLongitude(double longitude) {
         this.longitude = longitude;
     }

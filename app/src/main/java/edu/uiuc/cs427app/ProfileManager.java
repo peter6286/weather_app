@@ -16,6 +16,10 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
+/** ProfileManager class will be used to manage a user's
+    profile details. 
+    Methods will teacker a user's sign in and sign up results
+    as well as encrypt/decrypt their passwords.  **/
 public class ProfileManager {
 
     UserDao userDao;
@@ -31,7 +35,7 @@ public class ProfileManager {
     SecretKeySpec key=new SecretKeySpec(SECRET_KEY_BYTES, "AES");
 
 
-    // Sign-up result class
+    /** class to track a user's sign up results **/
     public class SignUpResult {
         private boolean success;
         private String message;
@@ -50,7 +54,7 @@ public class ProfileManager {
         public User getNew_user() { return new_user; }
     }
 
-    // Sign-in result class
+     /** class to track a user's sign in results **/
     public class SignInResult {
         private boolean success;
         private String message;
@@ -67,7 +71,14 @@ public class ProfileManager {
         public User getCheck_user() { return check_user; }
     }
 
-    // Sign-up method
+     /** method to process a user's sign up
+         @param    username    a unique name given to a user
+         @param    password    a password given by the user for sign up and sign in
+         @param    isDefaultTheme    dictates which theme to be used for the user
+         @param    isRounded    dictates whether buttons are rounded or squares
+         @param    isLargeText    dictates size of text
+         @return    SignUpResult that tells the user if sign up was successful and why it wasn't if so.
+         **/
     public SignUpResult signUp(String username, String password, Boolean isDefaultTheme, Boolean isRounded, Boolean isLargeText) {
         try {
             // Check if the username already exists
@@ -108,7 +119,11 @@ public class ProfileManager {
         }
     }
 
-    // Sign-in method
+    /** method to process a user's sign up
+         @param    username    a unique name given to a user
+         @param    password    a password given by the user for sign up and sign in
+         @return   SignInResult that tells the user if sign in was successful and why it wasn't if so.
+    **/
     public SignInResult signIn(String username, String password) {
         try {
             // Check if the username exists
@@ -138,7 +153,11 @@ public class ProfileManager {
 
 
 
-    // Encrypts/Hashes the password to store in the database for added security
+    /** Encrypts/Hashes the password to store in the database for added security 
+        @param    password     password to be encrypted
+        @param    secretKey    secret key to encrypt with
+        return    encrypted password string
+    **/
     public static String encryptPassword(String password, SecretKey secretKey) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException, InvalidKeyException {
         Cipher cipher = Cipher.getInstance("AES");
         cipher.init(Cipher.ENCRYPT_MODE, secretKey);
@@ -155,7 +174,11 @@ public class ProfileManager {
         return hexString.toString();
     }
 
-    // Decrypts the hashed password to get the original passwords
+    /** Decrypts the hashed password to get the original passwords 
+        @param    encryptedPassword     encrypted password to decrypt
+        @param    secretKey             secret key to decrypt with
+        return    decrypted password string
+    **/
     public static String decryptPassword(String encryptedPassword, SecretKey secretKey) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, BadPaddingException, IllegalBlockSizeException {
         byte[] encryptedBytes = new byte[encryptedPassword.length() / 2];
         for (int i = 0; i < encryptedBytes.length; i++) {

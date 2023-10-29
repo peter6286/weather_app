@@ -44,8 +44,8 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
     private SharedPreferences sharedPreferences;
     private CityDao cityDao;
 
-    // ActivityResultLauncher that updates the list when a new city is added.
-    // This processes an event sent from CityInputActivity.
+    /** ActivityResultLauncher that updates the list when a new city is added.
+        This processes an event sent from CityInputActivity. **/
     private ActivityResultLauncher<Intent> cityInputLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
@@ -64,12 +64,17 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
             }
     );
 
+    /** get city by city name string 
+        @param    cityName    city name 
+        return    City
+    **/
     private City GetCityByCityName(String cityName) {
         City city = new City();
         city.setCityName(cityName);
         return city;
     }
 
+    /** home page setup method to setup UI and backend **/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         createDb();
@@ -112,6 +117,7 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         });
 
         eSignOutButton.setOnClickListener(new View.OnClickListener() {
+            /** onclick function for sign out button **/
             @Override
             public void onClick(View v) {
                 uiManager.preferences.edit().putBoolean("signedIn", false).apply();
@@ -125,11 +131,13 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         });
     }
 
+    /** on click method **/
     @Override
     public void onClick(View view) {
 
     }
 
+    /** create database for home page **/
     public void createDb() {
         Context context = this;
         db = Room.databaseBuilder(context, UserCityDatabase.class, "database").allowMainThreadQueries().build();
