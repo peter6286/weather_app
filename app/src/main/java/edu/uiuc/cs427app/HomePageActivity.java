@@ -121,9 +121,7 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onClick(View v) {
                 uiManager.preferences.edit().putBoolean("signedIn", false).apply();
-                uiManager.setThemePreference(false);
-                uiManager.setButtonPreference(false);
-                uiManager.setTextSizePreference(false);
+                uiManager.resetStylePreference();
                 Toast.makeText(HomePageActivity.this, "Signed out successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(HomePageActivity.this, SignInActivity.class);
                 startActivity(intent);

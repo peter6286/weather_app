@@ -90,6 +90,7 @@ public class SignUpActivity extends AppCompatActivity {
                     PM.userDao = userDao;
                     ProfileManager.SignUpResult out = PM.signUp(inputUsername, inputPassword, isDefaultTheme, isRounded, isLargeText);
                     if (out.isSuccess()) {
+                        uiManager.resetStylePreference();
                         Toast.makeText(SignUpActivity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
                         startActivity(intent);

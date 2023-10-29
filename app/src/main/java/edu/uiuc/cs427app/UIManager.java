@@ -114,7 +114,7 @@ public class UIManager {
         }
     }
 
-    /** setButtonStyle method to set text view size 
+    /** changeStyleRecursive method to set theme preferences for component recursively
         @param    currentGroup group of UI componenets to modify
     **/
     public void changeStyleRecursive(ViewGroup currentGroup) {
@@ -142,5 +142,13 @@ public class UIManager {
             }
 
         }
+    }
+    /** resetStylePreference method to reset to default style for theme
+     *
+     */
+    public void resetStylePreference() {
+        this.setThemePreference(false);
+        this.setButtonPreference(false);
+        this.setTextSizePreference(false);
     }
 }
