@@ -43,6 +43,9 @@ public class SignInActivity extends AppCompatActivity {
         uiManager.preferences = getSharedPreferences("UserUI", MODE_PRIVATE);
         Log.d("DEBUG", "UI" + uiManager.toString());
 
+        /**
+         The eSignInButton.setOnClickListener() and eSignUpButton.setOnClickListener() functions are responsible for handling the click events on the "Sign in" and "Sign up" buttons, respectively. The View.OnClickListener interface is implemented to provide a callback method that is invoked when the button is clicked. **/
+
         eSignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

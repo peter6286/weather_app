@@ -24,6 +24,9 @@ public class UIManager {
     public SharedPreferences preferences;
     public ViewGroup currentLayout;
     public UserDao userDao;
+
+    /** setThemePreference method to set/change the theme preference of the user
+     * @param    isDefaultTheme    is boolean which tells whether the theme is default or not**/
     public void setThemePreference(boolean isDefaultTheme) {
         //SharedPreferences preferences = getSharedPreferences("UserUI", MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
