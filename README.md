@@ -33,9 +33,9 @@ Friday: https://illinois.zoom.us/j/84337550559?pwd=N0tHYnYwM3FPaVU4RCthN0wwUVgvQ
 </br>
 <b>Week 1</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We assigned team roles and established our meeting schedule.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
@@ -53,9 +53,9 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 
 <b>Week 2</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We completed the Informal Requirements and part of the Use Case together.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
@@ -72,9 +72,9 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 
 <b>Week 3</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Sherry and Quan took the initial step in creating the Class diagram and the Component Transition Graph. The team worked together to make necessary updates.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
@@ -91,9 +91,9 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 
 <b>Week 4</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We collectively reviewed Milestone 3 requirements and created a detailed, itemized to-do list. Subsequently, we collaborated to distribute the workload among the team.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
@@ -110,20 +110,20 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 
 <b>Week 5</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We have finished implementing all the database functions and getter and setter methods. Additionally, we have completed the frontend activities, including addCityActivity, removeCityActivity, landingPageActivity, signInActivity, and signUpActivity. To efficiently handle the workload, we divided into two teams. Team 1 worked collaboratively to debug the code, ensuring its smooth execution. Meanwhile, Team 2 thoroughly reviewed the existing code to compile a list of any missing class documentation and comments.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| ap73           | Added homPageActivity. Integrate addCityActivity and removeCityActivity with database calls. Added ID on main page display. Participated in debugging the code. Collaborated with team to make the code running successfully.| Add ViewWeatherActivity UI. This involves including a "View Weather" button on the homepage and creating the interface that appears when you click on it. This interface will present weather information like temperature, etc.|
+| xuehail2       | Lead the discussion during the team meeting, assisted in task coordination. Followed up with TA. Added additional use cases. Helped the team in listing missing class documentation and comments, participated in debugging the code.| Review the Milestone 4 assignment requirement and have a team discussion to divide up the assignments.|
+| yafengl2       | Completed the video and weekly report. Followed up with TA. Helped the team in listing and adding missing class documentation and comments. | Review the Milestone 4 assignment requirement and have a team discussion to divide up the assignments.|
+| aaleid2        | Helped the team in listing and adding missing class documentation and comments. Viewed the final code and added all missing comments.| Review the Milestone 4 assignment requirement and have a team discussion to divide up the assignments.|
+| quanhn2        | Added 3 customized UI themes. Implemented backend logic to landingPageActivity, signInActivity and signUpActivity. Participated in debugging the code. Collaborated with team to make the code running successfully.| Review the Milestone 4 assignment requirement and have a team discussion to divide up the assignments.|
+| sz77           | Implemented 2 classes, including profile manager and addCityActivity. Incorporate frontend and backend activities. Participated in debugging the code. Collaborated with team to make the code running successfully.| Review the Milestone 4 assignment requirement and have a team discussion to divide up the assignments.|
+| sinjass2       | Helped the team in listing and adding missing class documentation and comments.| Review the Milestone 4 assignment requirement and have a team discussion to divide up the assignments.|
+| ahalsi2        | Added hash password to store in database. Added a small instruction to the TA to run our code and final reviewing code. Participated in debugging the code. Collaborated with team to make the code running successfully. | Review the Milestone 4 assignment requirement and have a team discussion to divide up the assignments.|
 </br>
 
 
