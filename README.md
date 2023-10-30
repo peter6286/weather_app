@@ -33,7 +33,7 @@ Friday: https://illinois.zoom.us/j/84337550559?pwd=N0tHYnYwM3FPaVU4RCthN0wwUVgvQ
 </br>
 <b>Week 1</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
 Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
@@ -53,7 +53,7 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 
 <b>Week 2</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
 Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
@@ -72,7 +72,7 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 
 <b>Week 3</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
 Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
@@ -91,9 +91,9 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 
 <b>Week 4</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We collectively reviewed Milestone 3 requirements and created a detailed, itemized to-do list. Subsequently, we collaborated to distribute the workload among the team.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
@@ -110,9 +110,9 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 
 <b>Week 5</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We have finished implementing all the database functions and getter and setter methods. Additionally, we have completed the frontend activities, including addCityActivity, removeCityActivity, landingPageActivity, signInActivity, and signUpActivity. To efficiently handle the workload, we divided into two teams. Team 1 worked collaboratively to debug the code, ensuring its smooth execution. Meanwhile, Team 2 thoroughly reviewed the existing code to compile a list of any missing class documentation and comments.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
