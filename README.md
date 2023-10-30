@@ -116,14 +116,14 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| ap73           | Added homPageActivity. Integrate addCityActivity and removeCityActivity with database calls. Added ID on main page display. Participated in debugging the code. Collaborated with team to make the code running successfully.| Add ViewWeatherActivity UI. This involves including a "View Weather" button on the homepage and creating the interface that appears when you click on it. This interface will present weather information like temperature, etc.|
+| xuehail2       | Lead the discussion during the team meeting, assisted in task coordination. Followed up with TA. Added additional use cases. Helped the team in listing missing class documentation and comments, participated in debugging the code.| Review the Milestone 4 assignment requirement and have a team discussion to divide up the assignments.|
+| yafengl2       | Completed the video and weekly report. Followed up with TA. Helped the team in listing and adding missing class documentation and comments. | Review the Milestone 4 assignment requirement and have a team discussion to divide up the assignments.|
+| aaleid2        | Helped the team in listing and adding missing class documentation and comments. Viewed the final code and added all missing comments.| Review the Milestone 4 assignment requirement and have a team discussion to divide up the assignments.|
+| quanhn2        | Added 3 customized UI themes. Implemented backend logic to landingPageActivity, signInActivity and signUpActivity. Participated in debugging the code. Collaborated with team to make the code running successfully.| Review the Milestone 4 assignment requirement and have a team discussion to divide up the assignments.|
+| sz77           | Implemented 2 classes, including profile manager and addCityActivity. Incorporate frontend and backend activities. Participated in debugging the code. Collaborated with team to make the code running successfully.| Review the Milestone 4 assignment requirement and have a team discussion to divide up the assignments.|
+| sinjass2       | Helped the team in listing and adding missing class documentation and comments.| Review the Milestone 4 assignment requirement and have a team discussion to divide up the assignments.|
+| ahalsi2        | Added hash password to store in database. Added a small instruction to the TA to run our code and final reviewing code. Participated in debugging the code. Collaborated with team to make the code running successfully. | Review the Milestone 4 assignment requirement and have a team discussion to divide up the assignments.|
 </br>
 
 
