@@ -35,7 +35,7 @@ Friday: https://illinois.zoom.us/j/84337550559?pwd=N0tHYnYwM3FPaVU4RCthN0wwUVgvQ
 </br>
 Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We assigned team roles and established our meeting schedule.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
@@ -55,7 +55,7 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We completed the Informal Requirements and part of the Use Case together.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
@@ -74,7 +74,7 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
 Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Sherry and Quan took the initial step in creating the Class diagram and the Component Transition Graph. The team worked together to make necessary updates.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
