@@ -29,7 +29,9 @@ public class CityInputActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         createDb();
-        UserCityService userCityService = new UserCityService(linkUserCityDao, cityDao);
+        // TODO: Instantiate cityLocationVerifier.
+        ICityLocationVerifier cityLocationVerifier = null;
+        UserCityService userCityService = new UserCityService(linkUserCityDao, cityDao, cityLocationVerifier);
         uiManager = new UIManager();
         sharedPreferences = getSharedPreferences("UserUI", MODE_PRIVATE);
         String signedInUser = sharedPreferences.getString("userName", null);
@@ -63,19 +65,23 @@ public class CityInputActivity extends AppCompatActivity {
             if (!cityName.isEmpty()) {
                 Intent resultIntent = new Intent();
 
-                // Call to db.
-                City addedCity = userCityService.addCityForUser(signedInUser, cityName, stateOrRegionName, country);
+                try {
+                    // Call to db.
+                    City addedCity = userCityService.addCityForUser(signedInUser, cityName, stateOrRegionName, country);
 
-                if (addedCity != null) {
-                    resultIntent.putExtra("cityName", addedCity.getCityName());
-                    resultIntent.putExtra("stateOrRegion", addedCity.getStateOrRegionName());
-                    resultIntent.putExtra("country", addedCity.getCountryName());
-                    resultIntent.putExtra("cityId", addedCity.getCityID());
+                    if (addedCity != null) {
+                        resultIntent.putExtra("cityName", addedCity.getCityName());
+                        resultIntent.putExtra("stateOrRegion", addedCity.getStateOrRegionName());
+                        resultIntent.putExtra("country", addedCity.getCountryName());
+                        resultIntent.putExtra("cityId", addedCity.getCityID());
 
-                    // set result so parent activity can process it.
-                    setResult(RESULT_OK, resultIntent);
-                } else {
-                    Toast.makeText(CityInputActivity.this, "The city, state/region and country already exists in the list", Toast.LENGTH_SHORT).show();
+                        // set result so parent activity can process it.
+                        setResult(RESULT_OK, resultIntent);
+                    } else {
+                        Toast.makeText(CityInputActivity.this, "The city, state/region and country already exists in the list", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (Exception e) {
+                    Toast.makeText(CityInputActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
                 finish();

@@ -11,13 +11,14 @@ public class UserCityService {
 
     private final LinkUserCityDao linkUserCityDao;
     private final CityDao cityDao;  // Assuming there's a CityDao interface for handling City CRUD operations
-
+    private final ICityLocationVerifier cityLocationVerifier;
     /** This is a constructor for the UserCityService class. It takes two dependencies as input: a LinkUserCityDao and a CityDao. These dependencies will be used to access and update the user-city link and city tables in the database.
 
      The constructor initializes the linkUserCityDao and cityDao fields to the values passed in as parameters. These fields will be used by the service to perform operations on the user-city link and city tables. **/
-    public UserCityService(LinkUserCityDao linkUserCityDao, CityDao cityDao) {
+    public UserCityService(LinkUserCityDao linkUserCityDao, CityDao cityDao, ICityLocationVerifier cityLocationVerifier) {
         this.linkUserCityDao = linkUserCityDao;
         this.cityDao = cityDao;
+        this.cityLocationVerifier = cityLocationVerifier;
     }
 
     /** List cities for a user 
@@ -35,7 +36,7 @@ public class UserCityService {
          @param    countryName      a country name
          return    addded City
     **/
-    public City addCityForUser(String userName, String cityName, String stateOrRegion, String countryName) {
+    public City addCityForUser(String userName, String cityName, String stateOrRegion, String countryName) throws Exception {
         // 1. Check if the city exists in the database
         List<City> matchingCities = cityDao.findCitiesByName(cityName, stateOrRegion, countryName);
         Log.d("DEBUG", "city count" + matchingCities.stream().count());
@@ -43,12 +44,7 @@ public class UserCityService {
 
         // 2. If the city does not exist, insert it
         if (matchingCities == null || matchingCities.isEmpty()) {
-            City newCity = new City();
-            newCity.setCityName(cityName);
-            newCity.setStateOrRegionName(stateOrRegion);
-            newCity.setCountryName(countryName);
-
-            cityDao.insert(newCity);
+            verifyThenInsertCity(cityName, stateOrRegion, countryName);
 
             // Fetch the added city from the DB
             matchingCities = cityDao.findCitiesByName(cityName, stateOrRegion, countryName);
@@ -89,5 +85,19 @@ public class UserCityService {
             throw new RuntimeException("Error in remove the city for the user");
         }
         return getCitiesForUser(userName);  // Return the updated list of cities for that user
+    }
+
+    private void verifyThenInsertCity(String cityName, String stateOrRegion, String countryName) throws Exception {
+        City newCity = new City();
+        newCity.setCityName(cityName);
+        newCity.setStateOrRegionName(stateOrRegion);
+        newCity.setCountryName(countryName);
+
+        // Verify city location.
+        if (cityLocationVerifier != null) {
+            newCity = cityLocationVerifier.VerifyCityLocation(newCity);
+        }
+
+        cityDao.insert(newCity);
     }
 }
