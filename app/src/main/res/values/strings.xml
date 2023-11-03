@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name_with_arg">Team 19 - %s</string>
     <string name="app_name">Team 19</string>
+    <string name="city_name_weather_view">City Name : %s</string>
+    <string name="date_weather_view">Date : %s</string>
+    <string name="time_weather_view">Time : %s</string>
+    <string name="humidity_weather_view">Humidity : %s %%</string>
+    <string name="wind_speed_weather_view">Wind Speed : %s</string>
+    <string name="wind_direction_weather_view">Wind Direction : %s</string>
+    <string name="temperature_weather_view">Temperature : %s</string>
+    <string name="weather_weather_view">Weather : %s</string>
 </resources>

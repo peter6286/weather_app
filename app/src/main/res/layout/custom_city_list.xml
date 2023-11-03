@@ -22,7 +22,7 @@
 
                 <TextView
                     android:id="@+id/customCityName"
-                    android:layout_width="211dp"
+                    android:layout_width="114dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingStart="8dp"
@@ -31,21 +31,35 @@
 
                 <Button
                     android:id="@+id/customRemoveCityButton"
-                    android:layout_width="112dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Remove" />
+                    android:text="Remove"
+                    android:textSize="10sp" />
 
                 <Space
                     android:layout_width="8dp"
                     android:layout_height="wrap_content" />
 
                 <Button
-                    android:id="@+id/customCityShowDetailsButton"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/customCityMapButton"
+                    android:layout_width="62dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Show" />
+                    android:text="Map"
+                    android:textSize="10sp" />
+
+                <Space
+                    android:layout_width="8dp"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/customCityWeatherButton"
+                    android:layout_width="102dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Weather"
+                    android:textSize="10sp" />
             </LinearLayout>
         </LinearLayout>
 

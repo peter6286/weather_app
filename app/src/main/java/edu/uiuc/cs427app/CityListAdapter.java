@@ -1,8 +1,8 @@
 package edu.uiuc.cs427app;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.provider.Contacts;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +12,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.room.Room;
+
+import com.google.gson.Gson;
 
 import java.util.List;
 
@@ -78,14 +79,22 @@ public class CityListAdapter extends ArrayAdapter<City> {
         uiManager.setTextViewSize(cityNameView, uiManager.getTextSizePreference());
         Button removeButton = view.findViewById(R.id.customRemoveCityButton);
         uiManager.setButtonStyle(removeButton, uiManager.getButtonPreference());
-        Button showDetailsButton = view.findViewById(R.id.customCityShowDetailsButton);
-        uiManager.setButtonStyle(showDetailsButton, uiManager.getButtonPreference());
+        Button showWeatherButton = view.findViewById(R.id.customCityWeatherButton);
+        Button showMapButton = view.findViewById(R.id.customCityMapButton);
+        uiManager.setButtonStyle(showWeatherButton, uiManager.getButtonPreference());
+        uiManager.setButtonStyle(showMapButton, uiManager.getButtonPreference());
 
         City city = getItem(position);
 
         if (city != null) {
             cityNameView.setText(city.getCityName());
 
+            /*
+            Callback function to remove a city from the list. It grabs the cityId from the "city"
+             that has been clicked on and issues a call to the DB to remove that city.
+             Then it updates the UI to remove that item from the list, and notifes the data set has
+             changed.
+             */
             removeButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -98,12 +107,50 @@ public class CityListAdapter extends ArrayAdapter<City> {
                 }
             });
 
-            showDetailsButton.setOnClickListener(new View.OnClickListener() {
+            /*
+            Callback function to show the weather view for a particular city that is triggered on
+            click. It creates a new Intent based on the ViewWeatherActivity. It makes a call to the
+            weather API to get the weather data for the city that has been clicked on and passes
+            this  data to the ViewWeatherActivity. Some additional information like the
+            signed-in user and their theme preferences are also sent.
+             */
+            showWeatherButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Intent viewWeatherIntent = new Intent(getContext(), ViewWeatherActivity.class);
+
+                    // Make blocking call to weather API here and get the data.
+
+                    // Mock-up constant values for now:
+                    Double temperature = 30.0;
+                    Double windSpeed = 15.0;
+                    Double humidityPercentage = 20.5;
+                    String weather = "Sunny";
+                    String windDirection = "NW";
+
+                    Weather weatherInfo = new Weather(temperature, weather, humidityPercentage, windSpeed, windDirection);
+                    Gson gson = new Gson();
+                    viewWeatherIntent.putExtra("weatherInfo", gson.toJson(weatherInfo));
+
+                    viewWeatherIntent.putExtra("userName", uiManager.preferences.getString("userName", null));
+                    viewWeatherIntent.putExtra("themePreference", uiManager.getThemePreference());
+                    viewWeatherIntent.putExtra("cityId", city.getCityID());
+                    viewWeatherIntent.putExtra("cityName", city.getCityName());
+                    getContext().startActivity(viewWeatherIntent);
+                }
+            });
+
+            /*
+            Callback function to show the map view for a particular city. This needs to be
+            implemented.
+             */
+            showMapButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
                 }
             });
+
         }
 
         return view;

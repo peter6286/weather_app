@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewWeatherActivity">
+
+    <TextView
+        android:id="@+id/weatherInformationWeatherViewHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Weather Information"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/cityNameWeatherView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="City Name: "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weatherInformationWeatherViewHeader"
+        android:layout_marginTop="16dp" 
+        android:layout_marginLeft="7dp"/>
+
+    <TextView
+        android:id="@+id/dateWeatherView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Date: "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cityNameWeatherView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="7dp"/>
+
+    <TextView
+        android:id="@+id/timeWeatherView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Time: "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dateWeatherView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="7dp"/>
+
+    <TextView
+        android:id="@+id/humidityWeatherView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Humidity: "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeWeatherView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="7dp"/>
+
+    <TextView
+        android:id="@+id/weatherWeatherView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Weather: "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/humidityWeatherView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="7dp"/>
+
+    <TextView
+        android:id="@+id/windSpeedWeatherView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Wind Speed: "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weatherWeatherView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="7dp"/>
+
+    <TextView
+        android:id="@+id/windDirectionWeatherView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Wind Speed: "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/windSpeedWeatherView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="7dp"/>
+
+    <TextView
+        android:id="@+id/temperatureWeatherView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Temperature: "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/windDirectionWeatherView"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="7dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
