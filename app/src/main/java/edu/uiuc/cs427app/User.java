@@ -38,6 +38,17 @@ public class User {
 //        this.isLargeText = isLargeText;
     }
 
+    public User(String userName, String email, String firstName, String lastName, String password, Boolean isDefaultTheme, Boolean isRounded, Boolean isLargeText) {
+        this.userName = userName;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.isDefaultTheme = isDefaultTheme;
+        this.isRounded = isRounded;
+        this.isLargeText = isLargeText;
+    }
+
     @Ignore
     public User(@NonNull String userName, String password ) {
         this.userName = userName;
