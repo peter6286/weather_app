@@ -1,8 +1,11 @@
 package edu.uiuc.cs427app;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -147,7 +150,16 @@ public class CityListAdapter extends ArrayAdapter<City> {
             showMapButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    // Get inputCityName, inputLat, inputLon and add to intent bundle
+                    // This will be passed to ViewMapActivity to display the map
+                    // FIXME: right now it is hard code. City info has to be dynamically retrieved.
+                    Bundle bundle = new Bundle();
+                    bundle.putString("inputCityName", "New York City");
+                    bundle.putDouble("inputLat", 40.730610);
+                    bundle.putDouble("inputLon", -73.935242);
+                    Intent intent = new Intent(getContext(), ViewMapActivity.class);
+                    intent.putExtra("bundle", bundle);
+                    getContext().startActivity(intent);
                 }
             });
 
