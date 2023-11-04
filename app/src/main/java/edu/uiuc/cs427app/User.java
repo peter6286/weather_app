@@ -30,15 +30,15 @@ public class User {
     private Boolean isRounded;
     private Boolean isLargeText;
 
-    public User() {
-        this.userName = userName;
-        this.password = password;
+    //public User() {
+        //this.userName = userName;
+        //this.password = password;
 //        this.isDefaultTheme = isDefaultTheme;
 //        this.isRounded = isRounded;
 //        this.isLargeText = isLargeText;
-    }
+ //   }
 
-    @Ignore
+ // @Ignore
     public User(@NonNull String userName, String password ) {
         this.userName = userName;
         this.password = password;
