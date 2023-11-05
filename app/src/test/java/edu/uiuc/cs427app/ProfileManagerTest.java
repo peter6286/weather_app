@@ -23,7 +23,7 @@ public class ProfileManagerTest {
     public void testSignUp_UsernameExists() {
         userDao.insert(new User("existingUser", "existingPassword"));
 
-        ProfileManager.SignUpResult result = profileManager.signUp("existingUser", "newPassword");
+        ProfileManager.SignUpResult result = profileManager.signUp("existingUser", "newPassword", true, true, true);
 
         assertFalse(result.isSuccess());
         assertEquals("Username already exists.", result.getMessage());
@@ -31,7 +31,7 @@ public class ProfileManagerTest {
 
     @Test
     public void testSignUp_Success() {
-        ProfileManager.SignUpResult result = profileManager.signUp("newUser", "newPassword");
+        ProfileManager.SignUpResult result = profileManager.signUp("newUser", "newPassword", true, true, true);
 
         assertTrue(result.isSuccess());
         assertEquals("Successfully signed up.", result.getMessage());
@@ -49,7 +49,7 @@ public class ProfileManagerTest {
     public void testSignIn_WrongPassword() {
         userDao.insert(new User("existingUser", "correctPassword"));
 
-        ProfileManager.SignInResult result = profileManager.signIn("existingUser", "wrongPassword");
+       ProfileManager.SignInResult result = profileManager.signIn("existingUser", "wrongPassword");
 
         assertFalse(result.isSuccess());
         assertEquals("Invalid password.", result.getMessage());
@@ -75,11 +75,6 @@ public class ProfileManagerTest {
         }
 
         @Override
-        public int countUsersWithUsername(String username) {
-            return (int) users.stream().filter(u -> u.getUserName().equals(username)).count();
-        }
-
-        @Override
         public List<User> findUsersByName(String username) {
             List<User> result = new ArrayList<>();
             for (User user : users) {
@@ -89,5 +84,23 @@ public class ProfileManagerTest {
             }
             return result;
         }
+        @Override
+        public Integer saveUserUI(String userName, Boolean isDefault, Boolean isRounded, Boolean isLargeText) {
+            for (User user : users) {
+                if (user.getUserName().equals(userName)) {
+                    user.setDefaultTheme(isDefault);
+                    user.setIsRounded(isRounded);
+                    user.setIsLargeText(isLargeText);
+                    return 1; // Assuming we just update a single user
+                }
+            }
+            return 0; // No user found with that username
+        }
+        @Override
+        public boolean checkUserExistence(String userName) {
+            return users.stream().anyMatch(u -> u.getUserName().equals(userName));
+        }
+
+
     }
 }
