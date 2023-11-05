@@ -75,7 +75,7 @@ public class UserCityServiceTest {
         UserCityService userCityService = new UserCityService(linkUserCityDao, cityDao, mockCityLocationVerifier);
 
         String userName = "userName";
-        User user = new User(userName, "123");
+        User user = new User(userName, "abc@def.com", "a", "bc", "123", true, true, true);
         userDao.insert(user);
 
         String cityName = "cityName";
@@ -98,7 +98,7 @@ public class UserCityServiceTest {
         UserCityService userCityService = new UserCityService(linkUserCityDao, cityDao, mockCityLocationVerifier);
 
         String userName = "userName";
-        User user = new User(userName, "123");
+        User user = new User(userName, "abc@def.com", "a", "bc", "123", true, true, true);
         userDao.insert(user);
 
         userCityService.addCityForUser(userName, "city", "state", "country");
@@ -113,7 +113,7 @@ public class UserCityServiceTest {
         UserCityService userCityService = new UserCityService(linkUserCityDao, cityDao, mockCityLocationVerifier);
 
         String userName = "userName";
-        User user = new User(userName, "123");
+        User user = new User(userName, "abc@def.com", "a", "bc", "123", true, true, true);
         userDao.insert(user);
 
         userCityService.addCityForUser(userName, "city", "state", "country");
