@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +20,8 @@ import androidx.annotation.Nullable;
 import com.google.gson.Gson;
 
 import java.util.List;
+
+//import javax.xml.stream.Location;
 
 /**
  *Represents an adapter that facilitates the display of cities within a list view.
@@ -120,26 +123,33 @@ public class CityListAdapter extends ArrayAdapter<City> {
             showWeatherButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent viewWeatherIntent = new Intent(getContext(), ViewWeatherActivity.class);
 
-                    // Make blocking call to weather API here and get the data.
+                    WeatherParser weatherTask = new WeatherParser();
+                    weatherTask.execute();
 
-                    // Mock-up constant values for now:
-                    Double temperature = 30.0;
-                    Double windSpeed = 15.0;
-                    Double humidityPercentage = 20.5;
-                    String weather = "Sunny";
-                    String windDirection = "NW";
+                    weatherTask.setOnWeatherDataListener(new WeatherParser.OnWeatherDataListener() {
+                        @Override
+                        public void onWeatherDataAvailable(Weather weatherInfo) {
+                            if (weatherInfo != null) {
+                                // Weather data is available
+                                Gson gson = new Gson();
+                                String jsonWeatherInfo = gson.toJson(weatherInfo);
 
-                    Weather weatherInfo = new Weather(temperature, weather, humidityPercentage, windSpeed, windDirection);
-                    Gson gson = new Gson();
-                    viewWeatherIntent.putExtra("weatherInfo", gson.toJson(weatherInfo));
+                                Intent viewWeatherIntent = new Intent(getContext(), ViewWeatherActivity.class);
+                                viewWeatherIntent.putExtra("weatherInfo", jsonWeatherInfo);
 
-                    viewWeatherIntent.putExtra("userName", uiManager.preferences.getString("userName", null));
-                    viewWeatherIntent.putExtra("themePreference", uiManager.getThemePreference());
-                    viewWeatherIntent.putExtra("cityId", city.getCityID());
-                    viewWeatherIntent.putExtra("cityName", city.getCityName());
-                    getContext().startActivity(viewWeatherIntent);
+                                viewWeatherIntent.putExtra("userName", uiManager.preferences.getString("userName", null));
+                                viewWeatherIntent.putExtra("themePreference", uiManager.getThemePreference());
+                                viewWeatherIntent.putExtra("cityId", city.getCityID());
+                                viewWeatherIntent.putExtra("cityName", city.getCityName());
+
+                                getContext().startActivity(viewWeatherIntent);
+                            } else {
+                                // Handle case where weather data is not available
+                                Toast.makeText(getContext(), "Unable to retrieve weather data.", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
                 }
             });
 
