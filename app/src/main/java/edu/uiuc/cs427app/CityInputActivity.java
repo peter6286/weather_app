@@ -29,8 +29,7 @@ public class CityInputActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         createDb();
-        // TODO: Instantiate cityLocationVerifier.
-        ICityLocationVerifier cityLocationVerifier = null;
+        ICityLocationVerifier cityLocationVerifier = new Location();
         UserCityService userCityService = new UserCityService(linkUserCityDao, cityDao, cityLocationVerifier);
         uiManager = new UIManager();
         sharedPreferences = getSharedPreferences("UserUI", MODE_PRIVATE);
