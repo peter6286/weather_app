@@ -99,5 +99,36 @@ public class UserCityService {
         }
 
         cityDao.insert(newCity);
+
+    }
+
+    public static class CityCoordinates {
+        private final double latitude;
+        private final double longitude;
+
+        public CityCoordinates(double latitude, double longitude) {
+            this.latitude = latitude;
+            this.longitude = longitude;
+        }
+
+        public double getLatitude() {
+            return latitude;
+        }
+
+        public double getLongitude() {
+            return longitude;
+        }
+    }
+
+    /**
+     * Fetches the latitude and longitude for a given city by its name.
+     *
+     * @param cityName The name of the city.
+     * @return A CityCoordinates object containing the latitude and longitude.
+     */
+    public CityCoordinates getCityCoordinatesByName(String cityName, String stateOrRegion, String countryName) {
+        List<City> city = cityDao.findCitiesByName(cityName,stateOrRegion,countryName);
+        City SelectCity = city.get(0);
+        return new CityCoordinates(SelectCity.getLatitude(), SelectCity.getLongitude());
     }
 }
