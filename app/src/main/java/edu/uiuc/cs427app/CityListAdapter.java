@@ -124,9 +124,11 @@ public class CityListAdapter extends ArrayAdapter<City> {
                 @Override
                 public void onClick(View v) {
 
-                    WeatherParser weatherTask = new WeatherParser();
-                    weatherTask.execute();
 
+                    UserCityService userCityService = new UserCityService();
+                    UserCityService.CityCoordinates coordinates = UserCityService.getCityCoordinatesByName(city.getCityName(), city.getStateOrRegionName(), city.getCountryName());
+                    WeatherParser weatherTask = new WeatherParser();
+                    weatherTask.execute(coordinates.getLatitude(), coordinates.getLongitude());
                     weatherTask.setOnWeatherDataListener(new WeatherParser.OnWeatherDataListener() {
                         @Override
                         public void onWeatherDataAvailable(Weather weatherInfo) {
