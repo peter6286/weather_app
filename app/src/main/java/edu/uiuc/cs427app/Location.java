@@ -11,6 +11,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.StringJoiner;
 
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -20,7 +21,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
-public class Location {
+public class Location implements ICityLocationVerifier {
 
 
     interface LatLong {
@@ -54,6 +55,33 @@ public class Location {
     }
     OkHttpClient client = new OkHttpClient();
 
+    @Override
+    public City VerifyCityLocation(City city) throws Exception {
+        City result = city;
+
+        StringJoiner joiner = new StringJoiner(",");
+        joiner.add(city.getCityName());
+        joiner.add(city.getStateOrRegionName());
+
+        String cityStateName = joiner.toString();
+
+        try {
+            String[] latlon = getLatLong(cityStateName, city.getCountryName());
+            if (latlon.length != 2) {
+                throw new Exception("City not found.");
+            }
+
+            double lat = Double.parseDouble(latlon[0]);
+            double lon = Double.parseDouble(latlon[1]);
+
+            result.setLatitude(lat);
+            result.setLongitude(lon);
+        } catch (Exception e) {
+            throw new Exception("API failed.");
+        }
+
+        return result;
+    }
     String[] getLatLong(String city, String country) throws IOException {
         String url="https://api.geoapify.com/v1/geocode/search?text="+city+" "+country+"&apiKey=3a943c3232cb42a4b734f27d55f2989c";
         String[] res = {null,null};

@@ -95,8 +95,7 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         uiManager.currentLayout =  findViewById(R.id.homePageRoot);
         //uiManager.changeStyleRecursive(uiManager.currentLayout);
 
-        // TODO: Instantiate cityLocationVerifier.
-        ICityLocationVerifier cityLocationVerifier = null;
+        ICityLocationVerifier cityLocationVerifier = new Location();
         UserCityService userCityService = new UserCityService(linkUserCityDao, cityDao, cityLocationVerifier);
         // Get custom  cities for now.
         // Replace this with db call for logged in user to see if they have any cities.
