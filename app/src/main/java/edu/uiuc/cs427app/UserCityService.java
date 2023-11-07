@@ -10,7 +10,7 @@ a user's associated cities
 public class UserCityService {
 
     private final LinkUserCityDao linkUserCityDao;
-    private final CityDao cityDao;  // Assuming there's a CityDao interface for handling City CRUD operations
+    private final CityDao cityDao ;  // Assuming there's a CityDao interface for handling City CRUD operations
     private final ICityLocationVerifier cityLocationVerifier;
     /** This is a constructor for the UserCityService class. It takes two dependencies as input: a LinkUserCityDao and a CityDao. These dependencies will be used to access and update the user-city link and city tables in the database.
 

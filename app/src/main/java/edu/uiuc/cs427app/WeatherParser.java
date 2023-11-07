@@ -1,7 +1,10 @@
 package edu.uiuc.cs427app;
 
 import android.os.AsyncTask;
+import android.text.PrecomputedText;
 import android.util.Log;
+
+import androidx.core.text.PrecomputedTextCompat;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonArray;
@@ -16,7 +19,7 @@ import java.io.IOException;
 /**
  * This class is for making an API call to a weather service, parsing its JSON response, and returning its information in the form of a Weather object.
  */
-public class WeatherParser extends AsyncTask<Void, Void, Weather> {
+public class WeatherParser extends AsyncTask<Double, Double, Weather> {
     private OnWeatherDataListener listener;
 
     /**
@@ -38,22 +41,17 @@ public class WeatherParser extends AsyncTask<Void, Void, Weather> {
     /**
      * Performs the background task to fetch weather data from an API.
      * 
-     * @param voids 
+     * @param doubles
      * @return Weather object containing weather data to display in app.
      */
     @Override
-    protected Weather doInBackground(Void... voids) {
+    protected Weather doInBackground(Double... doubles) {
         OkHttpClient client = new OkHttpClient();
 
-        // String latitude = params[0];
-        // String longitude = params[1];
+         Double latitude = doubles[0];
+         Double longitude = doubles[1];
 
-        // TODO: change hard-coded values
-        double latitude = 37.77493;
-        double longitude = -122.41942;
-        String apiKey = "526ba0336235568bb65e9f08e2b9d242";
-        // String apiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=526ba0336235568bb65e9f08e2b9d242";
-        String apiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=" + apiKey + "&units=imperial";
+        String apiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude.toString() + "&lon=" + longitude.toString() + "&appid=" + BuildConfig.MAPS_API_KEY + "&units=imperial";
 
        
         Request request = new Request.Builder()
@@ -91,6 +89,8 @@ public class WeatherParser extends AsyncTask<Void, Void, Weather> {
 
         return null;
     }
+
+
 
     /**
      * Receives the weather data after it has been fetched and notifies the listener.

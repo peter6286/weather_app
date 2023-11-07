@@ -95,8 +95,8 @@ public class CityListAdapter extends ArrayAdapter<City> {
         if (city != null) {
             cityNameView.setText(city.getCityName());
             String cityName = city.getCityName();
-            Double cityLat = city.getLatitude();
-            Double cityLon = city.getLongitude();
+            Double cityLatitude = city.getLatitude();
+            Double cityLongitude = city.getLongitude();
 
             /*
             Callback function to remove a city from the list. It grabs the cityId from the "city"
@@ -127,9 +127,9 @@ public class CityListAdapter extends ArrayAdapter<City> {
                 @Override
                 public void onClick(View v) {
 
-                    WeatherParser weatherTask = new WeatherParser();
-                    weatherTask.execute();
 
+                    WeatherParser weatherTask = new WeatherParser();
+                    weatherTask.execute(cityLatitude, cityLongitude);
                     weatherTask.setOnWeatherDataListener(new WeatherParser.OnWeatherDataListener() {
                         @Override
                         public void onWeatherDataAvailable(Weather weatherInfo) {
@@ -168,8 +168,8 @@ public class CityListAdapter extends ArrayAdapter<City> {
                     // FIXME: right now it is hard code. City info has to be dynamically retrieved.
                     Bundle bundle = new Bundle();
                     bundle.putString("inputCityName", cityName);
-                    bundle.putDouble("inputLat", cityLat);
-                    bundle.putDouble("inputLon", cityLon);
+                    bundle.putDouble("inputLat", cityLatitude);
+                    bundle.putDouble("inputLon", cityLongitude);
                     Intent intent = new Intent(getContext(), ViewMapActivity.class);
                     intent.putExtra("bundle", bundle);
                     getContext().startActivity(intent);
