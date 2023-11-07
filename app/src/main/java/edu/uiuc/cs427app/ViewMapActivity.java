@@ -81,7 +81,7 @@ public class ViewMapActivity extends AppCompatActivity implements OnMapReadyCall
             LatLng location = new LatLng(currentLat, currentLon);
 
             // Add a marker on the map
-            cityMap.addMarker(new MarkerOptions().position(location).title("Marker Title"));
+            cityMap.addMarker(new MarkerOptions().position(location).title(currentCityName));
 
             // Move the camera to the marker location and set an appropriate zoom level
             cityMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 10));

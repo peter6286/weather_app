@@ -48,6 +48,8 @@ public class UserCityService {
 
             // Fetch the added city from the DB
             matchingCities = cityDao.findCitiesByName(cityName, stateOrRegion, countryName);
+
+            // Get the Long and Lat of the city from API
         }
 
         // Assume that the first matched city is the one we're interested in

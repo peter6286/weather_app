@@ -12,6 +12,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.StringJoiner;
+import java.util.concurrent.CountDownLatch;
 
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -67,74 +68,68 @@ public class Location implements ICityLocationVerifier {
 
         try {
             String[] latlon = getLatLong(cityStateName, city.getCountryName());
+            Log.d("DEBUG", "latlon succeed");
             if (latlon.length != 2) {
                 throw new Exception("City not found.");
             }
-
+            Log.d("DEBUG", "LAT" + latlon[0].toString());
+            Log.d("DEBUG", "LONG" + latlon[1].toString());
             double lat = Double.parseDouble(latlon[0]);
             double lon = Double.parseDouble(latlon[1]);
 
             result.setLatitude(lat);
             result.setLongitude(lon);
         } catch (Exception e) {
-            throw new Exception("API failed.");
+            throw new Exception("API failed." + e.toString());
         }
 
         return result;
     }
-    String[] getLatLong(String city, String country) throws IOException {
-        String url="https://api.geoapify.com/v1/geocode/search?text="+city+" "+country+"&apiKey=3a943c3232cb42a4b734f27d55f2989c";
-        String[] res = {null,null};
-        Log.v("kl","dg3");
-        Request request = new Request.Builder()
-                .url(url)
-                .build();
+    String[] getLatLong(String city, String country) throws IOException, InterruptedException {
+        String url = "https://api.geoapify.com/v1/geocode/search?text=" + city + " " + country + "&apiKey=3a943c3232cb42a4b734f27d55f2989c";
+        String[] res = {null, null};
+        final CountDownLatch latch = new CountDownLatch(1);
 
-       client.newCall(request).enqueue(new Callback() {
+        client.newCall(new Request.Builder().url(url).build()).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull okhttp3.Call call, @NonNull IOException e) {
+                e.printStackTrace();
+                latch.countDown();
+            }
 
-           @Override
-           public void onFailure(@NonNull okhttp3.Call call, @NonNull IOException e) {
-               Log.v("kl","dg2");
-               e.printStackTrace();
-           }
+            @Override
 
-           @Override
-           public void onResponse(@NonNull okhttp3.Call call, @NonNull Response response) throws IOException {
-               if(response.isSuccessful())
-               {
-                   Log.v("kl","dg");
-                   String myResponse=response.body().string();
-                   Gson g = new Gson();
-                   try {
-                       Log.v("kl7","kn");
-                       JSONObject jsonObject = new JSONObject(myResponse);
-                       JSONArray featuresArray = jsonObject.getJSONArray("features");
-                       JSONObject firstFeature = featuresArray.getJSONObject(0);
-                       JSONObject properties = firstFeature.getJSONObject("properties");
-                       String lat=properties.getString("lat");
-                       String lon=properties.getString("lon");
-                       Log.v("kl8",lat+" "+lon);
-                       res[0]=lat;
-                       res[1]=lon;
-//                       String geometry = firstFeature.getString("lat");
-//
-//
-//                       Log.v("kl6",geometry.toString());
-                   } catch (JSONException e) {
-                       throw new RuntimeException(e);
-                   }
-//                   LatLongLocation s = g.fromJson(myResponse, LatLongLocation.class);
-//                   Log.v("kl5",s.getType());
-//                   Log.v("kl4",s.getFeatures().toString());
 
-               }
-               else{
-                   Log.v("kl","sf");
-               }
-           }
+            public
 
-       });
-       return res;
+            void
+
+            onResponse(@NonNull okhttp3.Call call, @NonNull Response response)
+
+                    throws IOException {
+                if (response.isSuccessful()) {
+                    String myResponse = response.body().string();
+                    Gson g = new Gson();
+                    try {
+                        JSONObject jsonObject = new JSONObject(myResponse);
+                        JSONArray featuresArray = jsonObject.getJSONArray("features");
+                        JSONObject firstFeature = featuresArray.getJSONObject(0);
+                        JSONObject properties = firstFeature.getJSONObject("properties");
+                        String lat = properties.getString("lat");
+                        String lon = properties.getString("lon");
+                        Log.v("kl8", lat + " " + lon);
+                        res[0] = lat;
+                        res[1] = lon;
+                    } catch (JSONException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                latch.countDown();
+            }
+        });
+
+        latch.await(); // Wait for the latch to be counted down before returning
+        return res;
     }
 
 }
