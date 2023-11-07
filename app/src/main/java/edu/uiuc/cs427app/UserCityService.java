@@ -10,7 +10,7 @@ a user's associated cities
 public class UserCityService {
 
     private final LinkUserCityDao linkUserCityDao;
-    private static CityDao cityDao = null;  // Assuming there's a CityDao interface for handling City CRUD operations
+    private final CityDao cityDao ;  // Assuming there's a CityDao interface for handling City CRUD operations
     private final ICityLocationVerifier cityLocationVerifier;
     /** This is a constructor for the UserCityService class. It takes two dependencies as input: a LinkUserCityDao and a CityDao. These dependencies will be used to access and update the user-city link and city tables in the database.
 
@@ -128,7 +128,7 @@ public class UserCityService {
      * @param cityName The name of the city.
      * @return A CityCoordinates object containing the latitude and longitude.
      */
-    public static CityCoordinates getCityCoordinatesByName(String cityName, String stateOrRegion, String countryName) {
+    public CityCoordinates getCityCoordinatesByName(String cityName, String stateOrRegion, String countryName) {
         List<City> city = cityDao.findCitiesByName(cityName,stateOrRegion,countryName);
         City SelectCity = city.get(0);
         return new CityCoordinates(SelectCity.getLatitude(), SelectCity.getLongitude());
