@@ -94,6 +94,9 @@ public class CityListAdapter extends ArrayAdapter<City> {
 
         if (city != null) {
             cityNameView.setText(city.getCityName());
+            String cityName = city.getCityName();
+            Double cityLat = city.getLatitude();
+            Double cityLon = city.getLongitude();
 
             /*
             Callback function to remove a city from the list. It grabs the cityId from the "city"
@@ -166,9 +169,9 @@ public class CityListAdapter extends ArrayAdapter<City> {
                     // This will be passed to ViewMapActivity to display the map
                     // FIXME: right now it is hard code. City info has to be dynamically retrieved.
                     Bundle bundle = new Bundle();
-                    bundle.putString("inputCityName", "New York City");
-                    bundle.putDouble("inputLat", 40.730610);
-                    bundle.putDouble("inputLon", -73.935242);
+                    bundle.putString("inputCityName", cityName);
+                    bundle.putDouble("inputLat", cityLat);
+                    bundle.putDouble("inputLon", cityLon);
                     Intent intent = new Intent(getContext(), ViewMapActivity.class);
                     intent.putExtra("bundle", bundle);
                     getContext().startActivity(intent);

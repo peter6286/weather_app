@@ -53,11 +53,15 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
                     Intent data = result.getData();
                     String cityName = data.getStringExtra("cityName");
                     Integer cityId = data.getIntExtra("cityId", -1);
+                    Double cityLat = data.getDoubleExtra("cityLat", Double.MAX_VALUE);
+                    Double cityLon = data.getDoubleExtra("cityLon", Double.MAX_VALUE);
 
                     // FIXME: cityName, Lat and Long should be dynamically add here
                     City newCity = new City();
                     newCity.setCityID(cityId);
                     newCity.setCityName(cityName);
+                    newCity.setLatitude(cityLat);
+                    newCity.setLongitude(cityLon);
 
                     cities.add(newCity);
                     customAdapter.notifyDataSetChanged();

@@ -67,12 +67,13 @@ public class CityInputActivity extends AppCompatActivity {
                 try {
                     // Call to db.
                     City addedCity = userCityService.addCityForUser(signedInUser, cityName, stateOrRegionName, country);
-
                     if (addedCity != null) {
                         resultIntent.putExtra("cityName", addedCity.getCityName());
                         resultIntent.putExtra("stateOrRegion", addedCity.getStateOrRegionName());
                         resultIntent.putExtra("country", addedCity.getCountryName());
                         resultIntent.putExtra("cityId", addedCity.getCityID());
+                        resultIntent.putExtra("cityLat", addedCity.getLatitude());
+                        resultIntent.putExtra("cityLon", addedCity.getLongitude());
 
                         // set result so parent activity can process it.
                         setResult(RESULT_OK, resultIntent);
