@@ -51,7 +51,7 @@ public class WeatherParser extends AsyncTask<Double, Double, Weather> {
          Double latitude = doubles[0];
          Double longitude = doubles[1];
 
-        String apiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude.toString() + "&lon=" + longitude.toString() + "&appid=" + BuildConfig.MAPS_API_KEY + "&units=imperial";
+        String apiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + latitude.toString() + "&lon=" + longitude.toString() + "&appid=" + BuildConfig.WEATHER_API_KEY + "&units=imperial";
 
        
         Request request = new Request.Builder()
