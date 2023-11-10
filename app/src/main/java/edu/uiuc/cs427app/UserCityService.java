@@ -89,6 +89,20 @@ public class UserCityService {
         return getCitiesForUser(userName);  // Return the updated list of cities for that user
     }
 
+    /**
+     * Verifies the location of a city and then inserts it into the database.
+     * This method creates a new city object based on provided city name, state or region,
+     * and country name. It then verifies the city's location using the cityLocationVerifier
+     * if it is not null.
+     * After successful verification, the city is inserted into the database using the cityDao.
+     *
+     * @param cityName The name of the city to be verified and inserted.
+     * @param stateOrRegion The state or region where the city is located.
+     * @param countryName The country in which the city is situated.
+     * @throws Exception If the city's location cannot be verified (e.g., if the city is not found
+     *         or the verification API fails),or if there is an issue with inserting the city into
+     *         the database.
+     */
     private void verifyThenInsertCity(String cityName, String stateOrRegion, String countryName) throws Exception {
         City newCity = new City();
         newCity.setCityName(cityName);
