@@ -15,7 +15,13 @@ import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 
 import java.io.IOException;
-
+/**
+ * Tests for verifying if city locations (latitude and longitude) is obtained, throw exceptions if
+ * fails, insert into the database if the coordinates are successfully obtained.
+ *
+ * @author Sherry Li, Yafeng Liu
+ * @version 10/22/2023
+ */
 @RunWith(AndroidJUnit4.class)
 public class UserCityServiceTest {
     private UserDao userDao;
@@ -23,13 +29,18 @@ public class UserCityServiceTest {
     private LinkUserCityDao linkUserCityDao;
     private UserCityDatabase db;
 
+    // Predefined latitude and longitude for testing.
     private double latitude = 1.23;
     private double longitude = 4.56;
 
+    // Predefined throw exception messages.
     private String cityNotFoundMessage = "City not found.";
     private String apiFailureMessage = "API failed.";
 
     @Before
+    /**
+     * Create the database for testing.
+     */
     public void createDb() {
         Context context = ApplicationProvider.getApplicationContext();
         db = Room.inMemoryDatabaseBuilder(context, UserCityDatabase.class).build();
@@ -39,10 +50,18 @@ public class UserCityServiceTest {
     }
 
     @After
+    /**
+     * Close the database after testing.
+     */
     public void closeDb() throws IOException {
         db.close();
     }
 
+    /**
+     * Define a mock implementation of ICityLocationVerifier to simulate different
+     * scenarios (normal operation, city not found, and API failure) based on a given test case when
+     * verifying a city's location.
+     */
     private class MockCityLocationVerifier implements ICityLocationVerifier {
         private String testCase;
         public MockCityLocationVerifier(String testCase) {
@@ -67,9 +86,16 @@ public class UserCityServiceTest {
     }
 
     @Rule
+    /**
+     * Initializes a JUnit rule to specify and verify expected exceptions in test methods.
+     */
     public ExpectedException exceptionRule = ExpectedException.none();
 
     @Test
+    /**
+     * Test for adding a city for a user under normal condition, verifying the correct
+     * assignment of city details including name, state, country, latitude, and longitude.
+     */
     public void addCityForUserCityVerificationNormalTest() throws Exception {
         ICityLocationVerifier mockCityLocationVerifier = new MockCityLocationVerifier("normal");
         UserCityService userCityService = new UserCityService(linkUserCityDao, cityDao, mockCityLocationVerifier);
@@ -90,6 +116,10 @@ public class UserCityServiceTest {
     }
 
     @Test
+    /**
+     * Checks that an exception with the expected message is thrown when attempting to add a city
+     * for a user if the city is not found.
+     */
     public void addCityForUserCityVerificationCityNotFoundTest() throws Exception {
         exceptionRule.expect(Exception.class);
         exceptionRule.expectMessage(cityNotFoundMessage);
@@ -105,6 +135,10 @@ public class UserCityServiceTest {
     }
 
     @Test
+    /**
+     * Checks that an exception with the expected message is thrown when attempting to add a city
+     * for API failed.
+     */
     public void addCityForUserCityVerificationAPIFailureTest() throws Exception {
         exceptionRule.expect(Exception.class);
         exceptionRule.expectMessage(apiFailureMessage);
