@@ -29,31 +29,6 @@ public class Location implements ICityLocationVerifier {
         @GET("users/{user}/repos")
         Call<String> lat(@Path("user") String user);
     }
-    public static void getC(){
-//        final String[] data = {"lo"};
-//        Retrofit retrofit=new Retrofit.Builder()
-//                .baseUrl("https://api.geoapify.com/v1/geocode/")
-//                .build();
-//
-//        LatLong latlong=retrofit.create(LatLong.class);
-//        latlong.lat("search?text=amsterdam&apiKey=3a943c3232cb42a4b734f27d55f2989c").enqueue(new Callback<String>() {
-//            @Override
-//            public void onResponse(Call<String> call, Response<String> response) {
-//
-//                Log.d("hj","LL");
-//            }
-//
-//            @Override
-//            public void onFailure(Call<String> call, Throwable t) {
-//                data[0] ="fail";
-//            }
-//        });
-
-
-
-
-
-    }
     OkHttpClient client = new OkHttpClient();
 
     /**
@@ -101,17 +76,37 @@ public class Location implements ICityLocationVerifier {
 
         return result;
     }
+
+
+    // Function to get latitude and longitude for a given city and country using Geoapify API
+    // Parameters:
+    //   - city: The name of the city
+    //   - country: The name of the country
+    // Returns:
+    //   An array of strings containing latitude at index 0 and longitude at index 1
+    // Throws:
+    //   - IOException: If there's an issue with network communication
+    //   - InterruptedException: If the thread is interrupted while waiting for the latch
     String[] getLatLong(String city, String country) throws IOException, InterruptedException {
         String url = "https://api.geoapify.com/v1/geocode/search?text=" + city + " " + country + "&apiKey=3a943c3232cb42a4b734f27d55f2989c";
         String[] res = {null, null};
         final CountDownLatch latch = new CountDownLatch(1);
 
+
+        // Use OkHttp client to make an asynchronous HTTP request to the Geoapify API
+
         client.newCall(new Request.Builder().url(url).build()).enqueue(new Callback() {
+
+            // Callback method called when the request fails
             @Override
             public void onFailure(@NonNull okhttp3.Call call, @NonNull IOException e) {
                 e.printStackTrace();
                 latch.countDown();
             }
+
+
+
+            // Callback method called when the request is successful
 
             @Override
 
@@ -143,6 +138,8 @@ public class Location implements ICityLocationVerifier {
                 latch.countDown();
             }
         });
+        
+        // Wait for the latch to be counted down before returning the result array
 
         latch.await(); // Wait for the latch to be counted down before returning
         return res;
