@@ -30,7 +30,11 @@ public class UserCityDatabaseReadWriteTest {
     private LinkUserCityDao linkUserCityDao;
     private UserCityDatabase db;
 
+
     @Before
+    /**
+     * Create the database for testing.
+     */
     public void createDb() {
         Context context = ApplicationProvider.getApplicationContext();
         db = Room.inMemoryDatabaseBuilder(context, UserCityDatabase.class).build();
@@ -40,6 +44,9 @@ public class UserCityDatabaseReadWriteTest {
     }
 
     @After
+    /**
+     * Close the database after testing.
+     */
     public void closeDb() throws IOException {
         db.close();
     }
