@@ -118,19 +118,40 @@ public class UserCityService {
 
     }
 
+    /**
+     * This class represents the latitude and longitude of a city.
+     */
+
     public static class CityCoordinates {
         private final double latitude;
         private final double longitude;
+
+        /**
+         * Constructs a CityCoordinates object with the given latitude and longitude.
+         *
+         * @param latitude  The latitude of the city.
+         * @param longitude The longitude of the city.
+         */
 
         public CityCoordinates(double latitude, double longitude) {
             this.latitude = latitude;
             this.longitude = longitude;
         }
 
+        /**
+         * Gets the latitude of the city.
+         *
+         * @return The latitude.
+         */
         public double getLatitude() {
             return latitude;
         }
 
+        /**
+         * Gets the longitude of the city.
+         *
+         * @return The longitude.
+         */
         public double getLongitude() {
             return longitude;
         }
