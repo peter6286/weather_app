@@ -118,18 +118,24 @@ public class CityListAdapter extends ArrayAdapter<City> {
 
             /*
             Callback function to show the weather view for a particular city that is triggered on
-            click. It creates a new Intent based on the ViewWeatherActivity. It makes a call to the
-            weather API to get the weather data for the city that has been clicked on and passes
-            this  data to the ViewWeatherActivity. Some additional information like the
-            signed-in user and their theme preferences are also sent.
+            click.
              */
             showWeatherButton.setOnClickListener(new View.OnClickListener() {
+                /*
+                onClick creates a new Intent based on the ViewWeatherActivity. It makes a call to
+                the weather API to get the weather data for the city that has been clicked on and
+                passes this  data to the ViewWeatherActivity. Some additional information like the
+                signed-in user and their theme preferences are also sent.
+                 */
                 @Override
                 public void onClick(View v) {
-
-
                     WeatherParser weatherTask = new WeatherParser();
                     weatherTask.execute(cityLatitude, cityLongitude);
+                    /*
+                    Callback listener for the weatherTask which retrieves weather information for
+                    the city. When data is available, this call back is executed, and information
+                    is loaded and sent to the ViewWeatherActivity to display the weather.
+                     */
                     weatherTask.setOnWeatherDataListener(new WeatherParser.OnWeatherDataListener() {
                         @Override
                         public void onWeatherDataAvailable(Weather weatherInfo) {
@@ -157,15 +163,17 @@ public class CityListAdapter extends ArrayAdapter<City> {
             });
 
             /*
-            Callback function to show the map view for a particular city. This needs to be
-            implemented.
+            Setting the on click listener for the showMapButton.
              */
             showMapButton.setOnClickListener(new View.OnClickListener() {
+                /*
+                 onClick handler for the showMapButton. It passes the city name, the latitude, and longitude to the ViewMapActivity to
+                 display the map of the city identified by the coordinates.
+                 */
                 @Override
                 public void onClick(View view) {
                     // Get inputCityName, inputLat, inputLon and add to intent bundle
                     // This will be passed to ViewMapActivity to display the map
-                    // FIXME: right now it is hard code. City info has to be dynamically retrieved.
                     Bundle bundle = new Bundle();
                     bundle.putString("inputCityName", cityName);
                     bundle.putDouble("inputLat", cityLatitude);

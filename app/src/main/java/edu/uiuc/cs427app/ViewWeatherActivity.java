@@ -22,6 +22,10 @@ public class ViewWeatherActivity extends AppCompatActivity {
         textView.setText(getString(textViewStringPlaceholder, newText));
     }
 
+    /*
+    The onCreate method creates the weather view to display weather information for a selected city.
+    Information like temperature, humidity, city name are shown.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
