@@ -5,7 +5,7 @@
     <string name="date_weather_view">Date : %s</string>
     <string name="time_weather_view">Time : %s</string>
     <string name="humidity_weather_view">Humidity : %s %%</string>
-    <string name="wind_speed_weather_view">Wind Speed : %s</string>
+    <string name="wind_speed_weather_view">Wind Speed : %s mph</string>
     <string name="wind_direction_weather_view">Wind Direction : %s</string>
     <string name="temperature_weather_view">Temperature : %s "\u2109"</string>
     <string name="weather_weather_view">Weather : %s</string>
