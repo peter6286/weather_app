@@ -30,19 +30,23 @@ public class LinkUserCity {
     @NonNull
     public int cityID;
 
+    //gets username
     @NonNull
     public String getUserName() {
         return userName;
     }
 
+    //sets username
     public void setUserName(@NonNull String userName) {
         this.userName = userName;
     }
 
+    //gets city Id
     public int getCityID() {
         return cityID;
     }
 
+    //sets city Id
     public void setCityID(int cityID) {
         this.cityID = cityID;
     }
