@@ -20,6 +20,9 @@ public class City {
     private double latitude;
     private double longitude;
 
+    /**
+     * Constructor for creating a City instance. 
+     */
     public City() {}
 
     /** alternative constructor for creating a city 
