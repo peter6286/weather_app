@@ -129,39 +129,39 @@ Meeting notes: We have finished implementing all the database functions and gett
 
 <b>Week 6</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We collectively reviewed Milestone 4 requirements and created a detailed, itemized to-do list. Subsequently, we collaborated to distribute the workload among the team.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| ap73           | Reorganized the buttons on Homepage. | Implement the “View Weather” UI with new screen. |
+| xuehail2       | Lead and organize the discussion during the team meeting. Followed up with TA. Worked on business logic.| Add business logic of adding a new city to the db. |
+| yafengl2       | Added weather class and getter and setter methods to the class. Followed up with TA. | Complete a video. Complete weekly meeting notes.   |
+| aaleid2        | Hold off until weather API is implemented. | Show the weather button on home page and connect it to business logic.|
+| quanhn2        | Desk research for which map server to use. Implement getting the map from the selected map server.| Implement the “View Map” UI with new screen. |
+| sz77           | Hold off until map API is implemented. | Show the city button on home page and connect it to business logic.|
+| sinjass2       | Desk research on weather API. Provided detailed compare of several weather API.| Implement getting weather info (JSON) from the weather API.|
+| ahalsi2        | Desk research for which server to use for getting the city latitude and longitude. | Implement getting the city latitude and longitude from external server. |
 </br>
 
 
 <b>Week 7</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: ap73, xuehail2, yafengl2, aaleid2, quanhn2, sz77, sinjass2, ahalsi2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Each team member conducted a thorough code review. The team demoed the app and discussed necessary updates. Afterwards, we divided up the tasks for Milestone 5.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| ap73           | Implemented the “View Weather” UI to the new screen. Debugging to make sure the app runs smoothly.| Testing adding a new city. |
+| xuehail2       | Lead and organize the discussion during the team meeting. Followed up with TA. Added business logic of adding a new city to the db. | Testing removing an existing city. |
+| yafengl2       | Completed the video and weekly report. Followed up with TA. | Desk research about this JaCoCo and its integration with Android Studio. |
+| aaleid2        | Implemented calling the db to fetch a city's lat and long, and send them to the weather server. | Testing user log off. |
+| quanhn2        | Implemented the “View Map” UI to the new screen with Zoom in and Zoom out function. Debugging to make sure the app runs smoothly. | Testing user sign up. |
+| sz77           | Implemented calling the db to fetch a city's lat and long, and send them to the map server.| Testing user login. |
+| sinjass2       | Implemented getting weather info (JSON) from the weather API. | Testing weather feature (two cities). |
+| ahalsi2        | Implemented getting the city latitude and longitude from external server. Added a small instruction to the TA to run our code and final reviewing code.| Testing location feature (two cities). |
 </br>
 
 
