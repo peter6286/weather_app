@@ -11,6 +11,10 @@ import com.google.gson.Gson;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * The ViewWeatherActivity class displays weather information for a selected city,
+ * including details such as temperature, humidity, wind speed, and more.
+ */
 public class ViewWeatherActivity extends AppCompatActivity {
     private double epsilon = 1e-10;
 
@@ -40,8 +44,10 @@ public class ViewWeatherActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_view_weather);
 
+        // Set title with the signed-in user's name
         setTitle(getString(R.string.app_name_with_arg, weatherIntent.getStringExtra("userName")));
 
+        // Find TextViews for displaying weather information
         TextView cityNameTextView = findViewById(R.id.cityNameWeatherView);
         TextView dateTextView = findViewById(R.id.dateWeatherView);
         TextView timeTextView = findViewById(R.id.timeWeatherView);

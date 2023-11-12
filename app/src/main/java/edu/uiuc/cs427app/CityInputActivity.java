@@ -32,10 +32,24 @@ public class CityInputActivity extends AppCompatActivity {
         ICityLocationVerifier cityLocationVerifier = new Location();
         UserCityService userCityService = new UserCityService(linkUserCityDao, cityDao, cityLocationVerifier);
         uiManager = new UIManager();
+        // Obtain a reference to the SharedPreferences named "UserUI" with private access mode.
+// SharedPreferences is a simple key-value storage mechanism to store user-specific data persistently.
         sharedPreferences = getSharedPreferences("UserUI", MODE_PRIVATE);
+
+        // Retrieve the "userName" string from SharedPreferences, which represents the username of the signed-in user.
+// If no value is found, 'null' is returned.
         String signedInUser = sharedPreferences.getString("userName", null);
+
+        // Set the title of the current activity, using a formatted string that includes the app name and the signed-in user's name.
         setTitle(getString(R.string.app_name_with_arg, signedInUser));
+
+        // Assign the obtained SharedPreferences instance to the preferences property of the uiManager.
+// uiManager is assumed to be an instance of a class that manages the user interface.
         uiManager.preferences = sharedPreferences;
+
+        // Retrieve the theme preference using the uiManager and store it in the isDefaultTheme variable.
+// The theme preference is typically a boolean indicating whether the user has chosen the default theme.
+
         boolean isDefaultTheme = uiManager.getThemePreference();
         // Set the theme based on the preference
         if (isDefaultTheme) {
