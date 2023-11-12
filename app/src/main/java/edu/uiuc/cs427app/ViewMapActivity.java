@@ -13,7 +13,10 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
+/**
+ * The ViewMapActivity class is an AppCompatActivity that displays a map with a marker representing
+ * a specific city. It implements the OnMapReadyCallback interface to handle map rendering.
+ */
 public class ViewMapActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap cityMap;

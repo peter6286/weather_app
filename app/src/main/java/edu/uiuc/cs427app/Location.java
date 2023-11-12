@@ -22,9 +22,13 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
+/**
+ * The Location class implements the ICityLocationVerifier interface, providing a method
+ * to verify and update the geographical location of a city using external APIs.
+ */
 public class Location implements ICityLocationVerifier {
 
-
+    // Interface to define the Retrofit GET request for obtaining latitude and longitude
     interface LatLong {
         @GET("users/{user}/repos")
         Call<String> lat(@Path("user") String user);
